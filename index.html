@@ -3,833 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Aaron Talalla — Cybersecurity</title>
-
-    <meta
-        name="description"
-        content="Aaron Talalla — Cybersecurity student exploring security engineering, networks, offensive security and AI security."
-    >
-
-    <link rel="stylesheet" href="style.css">
-
+    <title>CYBER_OPS // Security Portfolio & Lab</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="scanlines"></div>
 
-<div class="noise"></div>
-
-<header class="navbar">
-
-    <a href="#home" class="logo">
-        A<span>T</span>
-    </a>
-
-    <nav>
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <a
-        href="https://github.com/artalalla"
-        target="_blank"
-        class="github-button"
-    >
-        GitHub <span>↗</span>
-    </a>
-
-</header>
-
-
-<main>
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero" id="home">
-
-    <div class="hero-left">
-
-        <div class="eyebrow">
-            <span class="live-dot"></span>
-            CYBERSECURITY / SECURITY ENGINEERING
-        </div>
-
-        <h1>
-            I build systems
-            <span>that are difficult to break.</span>
-        </h1>
-
-        <p class="hero-text">
-            Cybersecurity student focused on understanding systems,
-            finding weaknesses, and building better defenses.
-        </p>
-
-        <div class="hero-tags">
-            <span>NETWORK SECURITY</span>
-            <span>OFFENSIVE SECURITY</span>
-            <span>APPLICATION SECURITY</span>
-            <span>AI SECURITY</span>
-        </div>
-
-        <div class="hero-actions">
-
-            <a href="#work" class="button button-main">
-                Explore my work
-                <span>↓</span>
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-prefix">&gt;_</span>
+                <span class="logo-text">CYBER<span class="highlight">_OPS</span></span>
             </a>
-
-            <a
-                href="https://github.com/artalalla"
-                target="_blank"
-                class="button button-outline"
-            >
-                GitHub
-                <span>↗</span>
-            </a>
-
+            <div class="sys-status">
+                <span class="status-dot"></span>
+                <span class="status-text">SYSTEM ONLINE // SOC LEVEL 1</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#about"><i class="fa-solid fa-terminal"></i> About</a>
+                <a href="#skills"><i class="fa-solid fa-microchip"></i> Arsenal</a>
+                <a href="#projects"><i class="fa-solid fa-shield-halved"></i> Labs & Projects</a>
+                <a href="#terminal"><i class="fa-solid fa-code"></i> Interactive CLI</a>
+                <a href="#contact" class="btn-nav">Contact</a>
+            </nav>
         </div>
-
-    </div>
-
-
-    <!-- REAL SVG NETWORK -->
-
-    <div class="network">
-
-        <svg
-            viewBox="0 0 600 600"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-
-            <defs>
-
-                <radialGradient id="coreGlow">
-                    <stop offset="0%" stop-color="#9da8ff" stop-opacity=".45"/>
-                    <stop offset="50%" stop-color="#6978ff" stop-opacity=".12"/>
-                    <stop offset="100%" stop-color="#6978ff" stop-opacity="0"/>
-                </radialGradient>
-
-                <linearGradient id="lineGradient">
-                    <stop offset="0%" stop-color="#6675ff" stop-opacity=".1"/>
-                    <stop offset="50%" stop-color="#8f6dff" stop-opacity=".8"/>
-                    <stop offset="100%" stop-color="#6675ff" stop-opacity=".1"/>
-                </linearGradient>
-
-                <filter id="blur">
-                    <feGaussianBlur stdDeviation="14"/>
-                </filter>
-
-            </defs>
-
-
-            <!-- background glow -->
-
-            <circle
-                cx="300"
-                cy="300"
-                r="180"
-                fill="url(#coreGlow)"
-            />
-
-
-            <!-- orbit rings -->
-
-            <circle
-                class="network-ring"
-                cx="300"
-                cy="300"
-                r="110"
-            />
-
-            <circle
-                class="network-ring"
-                cx="300"
-                cy="300"
-                r="185"
-            />
-
-            <circle
-                class="network-ring"
-                cx="300"
-                cy="300"
-                r="260"
-            />
-
-
-            <!-- CONNECTIONS -->
-
-            <g class="connections">
-
-                <line x1="300" y1="300" x2="300" y2="75"/>
-                <line x1="300" y1="300" x2="510" y2="180"/>
-                <line x1="300" y1="300" x2="520" y2="400"/>
-                <line x1="300" y1="300" x2="340" y2="525"/>
-                <line x1="300" y1="300" x2="105" y2="450"/>
-                <line x1="300" y1="300" x2="80" y2="275"/>
-                <line x1="300" y1="300" x2="125" y2="120"/>
-
-                <line x1="300" y1="75" x2="510" y2="180"/>
-                <line x1="510" y1="180" x2="520" y2="400"/>
-                <line x1="520" y1="400" x2="340" y2="525"/>
-                <line x1="340" y1="525" x2="105" y2="450"/>
-                <line x1="105" y1="450" x2="80" y2="275"/>
-                <line x1="80" y1="275" x2="125" y2="120"/>
-                <line x1="125" y1="120" x2="300" y2="75"/>
-
-            </g>
-
-
-            <!-- DATA PARTICLES -->
-
-            <circle class="particle p1" r="3">
-                <animateMotion
-                    dur="3s"
-                    repeatCount="indefinite"
-                    path="M300 300 L300 75"
-                />
-            </circle>
-
-            <circle class="particle p2" r="3">
-                <animateMotion
-                    dur="4s"
-                    repeatCount="indefinite"
-                    path="M300 300 L510 180"
-                />
-            </circle>
-
-            <circle class="particle p3" r="3">
-                <animateMotion
-                    dur="3.5s"
-                    repeatCount="indefinite"
-                    path="M300 300 L105 450"
-                />
-            </circle>
-
-
-            <!-- NODES -->
-
-            <g class="nodes">
-
-                <g class="node-svg">
-                    <circle cx="300" cy="300" r="25" class="core"/>
-                    <circle cx="300" cy="300" r="8" class="core-dot"/>
-                </g>
-
-                <g class="node-svg">
-                    <circle cx="300" cy="75" r="7"/>
-                    <circle cx="300" cy="75" r="2.5" class="node-dot"/>
-                </g>
-
-                <g class="node-svg">
-                    <circle cx="510" cy="180" r="7"/>
-                    <circle cx="510" cy="180" r="2.5" class="node-dot"/>
-                </g>
-
-                <g class="node-svg">
-                    <circle cx="520" cy="400" r="7"/>
-                    <circle cx="520" cy="400" r="2.5" class="node-dot"/>
-                </g>
-
-                <g class="node-svg">
-                    <circle cx="340" cy="525" r="7"/>
-                    <circle cx="340" cy="525" r="2.5" class="node-dot"/>
-                </g>
-
-                <g class="node-svg">
-                    <circle cx="105" cy="450" r="7"/>
-                    <circle cx="105" cy="450" r="2.5" class="node-dot"/>
-                </g>
-
-                <g class="node-svg">
-                    <circle cx="80" cy="275" r="7"/>
-                    <circle cx="80" cy="275" r="2.5" class="node-dot"/>
-                </g>
-
-                <g class="node-svg">
-                    <circle cx="125" cy="120" r="7"/>
-                    <circle cx="125" cy="120" r="2.5" class="node-dot"/>
-                </g>
-
-            </g>
-
-        </svg>
-
-
-        <div class="network-label label-top">
-            <span>01</span>
-            NETWORK
-        </div>
-
-        <div class="network-label label-right">
-            <span>02</span>
-            SYSTEMS
-        </div>
-
-        <div class="network-label label-bottom">
-            <span>03</span>
-            SECURITY
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section class="about section">
-
-    <div class="section-label">
-        01 / ABOUT
-    </div>
-
-    <div class="about-grid">
-
-        <h2>
-            Security starts with
-            <span>understanding.</span>
-        </h2>
-
-        <div class="about-copy">
-
-            <p>
-                I am interested in how systems work beneath the surface —
-                from networks and operating systems to applications and
-                emerging AI systems.
-            </p>
-
-            <p>
-                I like approaching security from both sides:
-                understanding how something is built, finding how it can
-                fail, and using those findings to make it more resilient.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
-
-<section class="work section" id="work">
-
-    <div class="section-heading">
-
-        <div>
-            <div class="section-label">
-                02 / SELECTED WORK
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-container">
+                <div class="cyber-badge">
+                    <i class="fa-solid fa-lock"></i> SEC_ID: SOC-ANALYST-2026
+                </div>
+                <h1 class="glitch-title">CYBERSECURITY ANALYST</h1>
+                <div class="typing-container">
+                    <span class="prompt-symbol">&gt;</span>
+                    <span id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Specializing in Security Operations Center (SOC) monitoring, SIEM threat detection, log telemetry analysis, and incident response automation. 
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="cyber-btn primary">
+                        <i class="fa-solid fa-crosshairs"></i> VIEW SECURITY LABS
+                    </a>
+                    <a href="#terminal" class="cyber-btn secondary">
+                        <i class="fa-solid fa-terminal"></i> LAUNCH INTERACTIVE CLI
+                    </a>
+                    <a href="resume.pdf" target="_blank" class="cyber-btn outline">
+                        <i class="fa-solid fa-file-pdf"></i> RESUME.PDF
+                    </a>
+                </div>
+
+                <!-- Live SOC Event Stream Simulation -->
+                <div class="live-stream-box">
+                    <div class="stream-header">
+                        <span class="stream-title"><i class="fa-solid fa-wave-square"></i> LIVE TELEMETRY FEED</span>
+                        <span class="stream-badge">MONITORING ACTIVE</span>
+                    </div>
+                    <div class="stream-body" id="log-stream"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personnel Dossier -->
+        <section class="section" id="about">
+            <div class="section-title-wrap">
+                <h2 class="section-title"><span class="title-num">01.</span> PERSONNEL_DOSSIER</h2>
+                <div class="title-line"></div>
             </div>
 
-            <h2>
-                Built, broken &
-                <span>analysed.</span>
-            </h2>
-        </div>
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn-red"></span>
+                        <span class="btn-yellow"></span>
+                        <span class="btn-green"></span>
+                    </div>
+                    <div class="terminal-title">dossier_analyst.sh - bash</div>
+                </div>
+                <div class="terminal-body">
+                    <p class="term-line"><span class="term-user">analyst@soc-node:~$</span> cat background.json</p>
+                    <div class="json-code">
+{
+  <span class="json-key">"identity"</span>: <span class="json-string">"Cybersecurity Student & SOC Enthusiast"</span>,
+  <span class="json-key">"primary_focus"</span>: [<span class="json-string">"SOC Telemetry Triage"</span>, <span class="json-string">"SIEM Rules Engineering"</span>, <span class="json-string">"Log Analysis"</span>],
+  <span class="json-key">"current_status"</span>: <span class="json-string">"Seeking SOC Intern / Security Analyst Roles"</span>,
+  <span class="json-key">"active_lab_environment"</span>: <span class="json-string">"Dual-VM Subnet Architecture (Wazuh SIEM + Windows 11 Endpoint)"</span>
+}
+                    </div>
+                    <p class="term-line mt-15"><span class="term-user">analyst@soc-node:~$</span> summary --highlights</p>
+                    <p class="term-text">
+                        Passionate cybersecurity analyst with hands-on experience designing SIEM lab architectures, configuring endpoint agents, analyzing Windows Event Logs/Syslog streams, and investigating security telemetry. Skilled in isolating suspicious activity, mapping adversary behaviors to the MITRE ATT&CK framework, and writing custom detection rules.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        <p>
-            Hands-on security projects covering offensive security,
-            defensive operations and security research.
-        </p>
-
-    </div>
-
-
-    <div class="project-grid">
-
-        <article class="project featured-project">
-
-            <div class="project-number">
-                01
+        <!-- Technical Arsenal -->
+        <section class="section" id="skills">
+            <div class="section-title-wrap">
+                <h2 class="section-title"><span class="title-num">02.</span> TECHNICAL_ARSENAL</h2>
+                <div class="title-line"></div>
             </div>
 
-            <div class="project-type">
-                DEFENSIVE SECURITY
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-tower-observation"></i></div>
+                    <h3>SIEM & Log Telemetry</h3>
+                    <p>Hands-on experience deploying and monitoring enterprise security event logs.</p>
+                    <ul class="skill-tags">
+                        <li>Wazuh Manager</li>
+                        <li>Wazuh Agent</li>
+                        <li>Splunk Basics</li>
+                        <li>Elastic / ELK</li>
+                        <li>Syslog</li>
+                        <li>Windows Event ID Triage</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Network & Threat Analysis</h3>
+                    <p>Capturing and parsing network traffic to detect anomalies and unauthorized signals.</p>
+                    <ul class="skill-tags">
+                        <li>Wireshark</li>
+                        <li>Nmap</li>
+                        <li>TCP/IP Subnetting</li>
+                        <li>Packet Inspection</li>
+                        <li>Suricata / Snort</li>
+                        <li>Firewall Rules</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Scripting & Automation</h3>
+                    <p>Automating log extraction, parsing IOCs, and scripting security tasks.</p>
+                    <ul class="skill-tags">
+                        <li>Python 3</li>
+                        <li>Bash Scripting</li>
+                        <li>PowerShell</li>
+                        <li>Regex Matching</li>
+                        <li>Git & GitHub</li>
+                        <li>Ubuntu / Kali Linux</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fa-solid fa-chess-knight"></i></div>
+                    <h3>Frameworks & Methodology</h3>
+                    <p>Structured security frameworks for threat intelligence and alert handling.</p>
+                    <ul class="skill-tags">
+                        <li>MITRE ATT&CK</li>
+                        <li>Cyber Kill Chain</li>
+                        <li>NIST SP 800-61</li>
+                        <li>SOC Incident Lifecycle</li>
+                        <li>Root Cause Triage</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Labs -->
+        <section class="section" id="projects">
+            <div class="section-title-wrap">
+                <h2 class="section-title"><span class="title-num">03.</span> SECURITY_LABS_&_PROJECTS</h2>
+                <div class="title-line"></div>
             </div>
 
-            <div class="project-symbol">
-                ◈
+            <div class="projects-container">
+                <div class="project-card featured">
+                    <div class="project-header">
+                        <div class="project-badge"><i class="fa-solid fa-star"></i> FEATURED SOC LAB</div>
+                        <span class="project-id">PRJ-01 // WAZUH-LAB</span>
+                    </div>
+                    <h3 class="project-title">Enterprise Wazuh SIEM & Windows Endpoint Telemetry Lab</h3>
+                    <p class="project-description">
+                        Constructed a full-featured security monitoring lab comprising two virtual machines on an isolated subnet. Deployed a <strong>Wazuh SIEM Server</strong> on Ubuntu Linux and a <strong>Wazuh Agent</strong> on a Windows 11 target host to collect, parse, and analyze real-time system telemetry.
+                    </p>
+
+                    <div class="project-highlights">
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Configured agent-to-server TLS encrypted log forwarding across local subnet.</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Mapped Windows Event Logs (Event ID 4624 logon, 4625 brute force, 7045 service creation) to custom alert severity rules.</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Validated detection coverage against MITRE ATT&CK techniques (T1078 Valid Accounts, T1110 Brute Force).</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">Wazuh SIEM</span>
+                        <span class="tech-tag">Windows 11 Target</span>
+                        <span class="tech-tag">Ubuntu Server</span>
+                        <span class="tech-tag">Log Analysis</span>
+                        <span class="tech-tag">Subnetting</span>
+                        <span class="tech-tag">Sysmon</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/wazuh-lab" target="_blank" class="cyber-btn small">
+                            <i class="fa-brands fa-github"></i> VIEW REPO
+                        </a>
+                        <a href="#terminal" class="cyber-btn small outline" onclick="runCliCommand('wazuh')">
+                            <i class="fa-solid fa-terminal"></i> SIMULATE LOGS IN CLI
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-type">AUTOMATION SCRIPT</span>
+                        <span class="project-id">PRJ-02 // LOG-PARSER</span>
+                    </div>
+                    <h3 class="project-title">Automated Threat Intelligence & Syslog IOC Extractor</h3>
+                    <p class="project-description">
+                        Developed a lightweight Python automation tool that ingests raw authentication logs and access files, utilizes Regex to extract IPv4 addresses/hashes, and queries public Threat Intel APIs to flag malicious IOCs.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python 3</span>
+                        <span class="tech-tag">Regex</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">Threat Intel</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Terminal CLI Sandbox -->
+        <section class="section" id="terminal">
+            <div class="section-title-wrap">
+                <h2 class="section-title"><span class="title-num">04.</span> INTERACTIVE_CLI_TERMINAL</h2>
+                <div class="title-line"></div>
             </div>
 
-            <h3>
-                SOC Detection Lab
-            </h3>
+            <div class="cli-container">
+                <div class="cli-topbar">
+                    <div class="cli-title"><i class="fa-solid fa-terminal"></i> CYBER_OPS COMMAND SHELL v2.4</div>
+                    <div class="cli-hints">Type <span class="cmd-highlight">'help'</span> for command list</div>
+                </div>
+                <div class="cli-output" id="cli-output">
+                    <div class="cli-welcome">
+                        <p>Welcome to CYBER_OPS Interactive Terminal Shell [v2.4.0-release]</p>
+                        <p>Type <span class="cmd-highlight">'help'</span> to view commands or try <span class="cmd-highlight">'skills'</span>, <span class="cmd-highlight">'projects'</span>, <span class="cmd-highlight">'wazuh'</span>, <span class="cmd-highlight">'contact'</span>.</p>
+                        <br>
+                    </div>
+                </div>
+                <div class="cli-input-row">
+                    <span class="cli-prompt">visitor@cyber-ops:~$</span>
+                    <input type="text" id="cli-input" placeholder="Type command..." autofocus autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </section>
 
-            <p>
-                Built a simulated security operations environment
-                focused on monitoring, log analysis and detection
-                engineering.
-            </p>
-
-            <div class="project-stack">
-                <span>Linux</span>
-                <span>SIEM</span>
-                <span>Detection</span>
-                <span>Logs</span>
+        <!-- Contact Transmit -->
+        <section class="section" id="contact">
+            <div class="section-title-wrap">
+                <h2 class="section-title"><span class="title-num">05.</span> TRANSMIT_SIGNAL</h2>
+                <div class="title-line"></div>
             </div>
 
-            <a
-                href="https://github.com/artalalla"
-                target="_blank"
-                class="project-link"
-            >
-                VIEW PROJECT <span>↗</span>
-            </a>
+            <div class="contact-card">
+                <div class="contact-info">
+                    <h3>GET IN TOUCH</h3>
+                    <p>Actively seeking <strong>SOC Intern</strong> and <strong>Cybersecurity / IT Internship</strong> opportunities. Feel free to reach out for inquiries or collaboration!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span id="email-text">your.email@example.com</span>
+                            <button class="copy-btn" id="copy-email-btn" onclick="copyEmail()"><i class="fa-solid fa-copy"></i> Copy</button>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <a href="https://linkedin.com" target="_blank">linkedin.com/in/yourprofile</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com" target="_blank">github.com/yourusername</a>
+                        </div>
+                    </div>
+                </div>
 
-        </article>
-
-
-        <article class="project">
-
-            <div class="project-number">
-                02
+                <form class="cyber-form" onsubmit="event.preventDefault(); alert('Transmission Sent!');">
+                    <div class="form-group">
+                        <label for="name">&gt; SENDER_NAME</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">&gt; SENDER_EMAIL</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">&gt; TRANSMISSION_PAYLOAD</label>
+                        <textarea id="message" rows="4" placeholder="Your message or internship inquiry..." required></textarea>
+                    </div>
+                    <button type="submit" class="cyber-btn primary full-width">
+                        <i class="fa-solid fa-paper-plane"></i> TRANSMIT MESSAGE
+                    </button>
+                </form>
             </div>
-
-            <div class="project-type">
-                OFFENSIVE SECURITY
-            </div>
-
-            <div class="project-symbol">
-                ⌁
-            </div>
-
-            <h3>
-                vsftpd Exploitation
-            </h3>
-
-            <p>
-                Explored the exploitation lifecycle of a vulnerable
-                FTP service from reconnaissance and enumeration
-                through exploitation.
-            </p>
-
-            <div class="project-stack">
-                <span>Nmap</span>
-                <span>Metasploit</span>
-                <span>FTP</span>
-                <span>Linux</span>
-            </div>
-
-            <a
-                href="https://github.com/artalalla"
-                target="_blank"
-                class="project-link"
-            >
-                VIEW PROJECT <span>↗</span>
-            </a>
-
-        </article>
-
-
-        <article class="project">
-
-            <div class="project-number">
-                03
-            </div>
-
-            <div class="project-type">
-                SECURITY AWARENESS
-            </div>
-
-            <div class="project-symbol">
-                ◇
-            </div>
-
-            <h3>
-                Phishing Simulation
-            </h3>
-
-            <p>
-                Designed a controlled phishing simulation to explore
-                attack delivery, user interaction and defensive
-                awareness.
-            </p>
-
-            <div class="project-stack">
-                <span>Phishing</span>
-                <span>Email Security</span>
-                <span>OSINT</span>
-            </div>
-
-            <a
-                href="https://github.com/artalalla"
-                target="_blank"
-                class="project-link"
-            >
-                VIEW PROJECT <span>↗</span>
-            </a>
-
-        </article>
-
-
-        <article class="project project-future">
-
-            <div class="project-number">
-                04
-            </div>
-
-            <div class="project-type">
-                RESEARCH / IN PROGRESS
-            </div>
-
-            <div class="project-symbol">
-                +
-            </div>
-
-            <h3>
-                AI Security
-            </h3>
-
-            <p>
-                Exploring security problems emerging around AI
-                applications, LLMs and adversarial attacks.
-            </p>
-
-            <div class="project-stack">
-                <span>AI Security</span>
-                <span>LLM Security</span>
-                <span>AppSec</span>
-            </div>
-
-            <div class="coming">
-                CURRENTLY EXPLORING
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     APPROACH
-===================================================== -->
-
-<section class="approach section">
-
-    <div class="section-label">
-        03 / APPROACH
-    </div>
-
-    <h2 class="large-heading">
-        Security is a system,
-        <span>not a checkbox.</span>
-    </h2>
-
-
-    <div class="approach-grid">
-
-        <div class="approach-item">
-
-            <span>01</span>
-
-            <h3>
-                Understand
-            </h3>
-
-            <p>
-                Build strong foundations in systems, networks,
-                software and infrastructure.
-            </p>
-
-        </div>
-
-
-        <div class="approach-item">
-
-            <span>02</span>
-
-            <h3>
-                Break
-            </h3>
-
-            <p>
-                Think offensively and identify weaknesses before
-                they become real incidents.
-            </p>
-
-        </div>
-
-
-        <div class="approach-item">
-
-            <span>03</span>
-
-            <h3>
-                Defend
-            </h3>
-
-            <p>
-                Turn vulnerabilities and observations into
-                stronger security controls.
-            </p>
-
-        </div>
-
-
-        <div class="approach-item">
-
-            <span>04</span>
-
-            <h3>
-                Research
-            </h3>
-
-            <p>
-                Explore emerging problems at the intersection
-                of technology and security.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     EXPERIENCE
-===================================================== -->
-
-<section class="experience section" id="experience">
-
-    <div class="section-label">
-        04 / EXPERIENCE
-    </div>
-
-    <h2 class="large-heading">
-        Learning through
-        <span>real systems.</span>
-    </h2>
-
-
-    <div class="experience-item">
-
-        <div class="experience-year">
-            2026
-        </div>
-
-        <div class="experience-content">
-
-            <div class="experience-company">
-                NETPLUZ ASIA
-            </div>
-
-            <h3>
-                SNOC Engineering Intern
-            </h3>
-
-            <p>
-                Worked within a network operations environment,
-                gaining hands-on exposure to network monitoring,
-                troubleshooting, security operations and
-                real-world infrastructure.
-            </p>
-
-            <div class="experience-stack">
-                <span>NETWORK OPERATIONS</span>
-                <span>MONITORING</span>
-                <span>TROUBLESHOOTING</span>
-                <span>SECURITY</span>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="experience-item">
-
-        <div class="experience-year">
-            NOW
-        </div>
-
-        <div class="experience-content">
-
-            <div class="experience-company">
-                INDEPENDENT
-            </div>
-
-            <h3>
-                Security Research & Development
-            </h3>
-
-            <p>
-                Building hands-on projects while developing deeper
-                foundations across Linux, networking, application
-                security and AI security.
-            </p>
-
-            <div class="experience-stack">
-                <span>CYBERSECURITY</span>
-                <span>APPSEC</span>
-                <span>AI SECURITY</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SKILLS
-===================================================== -->
-
-<section class="skills section" id="skills">
-
-    <div class="section-label">
-        05 / TECHNICAL STACK
-    </div>
-
-    <h2 class="large-heading">
-        Foundations first.
-        <span>Security second.</span>
-    </h2>
-
-
-    <div class="skills-grid">
-
-        <div>
-            <span>01</span>
-            <h3>Systems</h3>
-            <p>
-                Linux · Windows · Virtualization · Administration
-            </p>
-        </div>
-
-        <div>
-            <span>02</span>
-            <h3>Networking</h3>
-            <p>
-                TCP/IP · DNS · HTTP · Routing · Firewalls
-            </p>
-        </div>
-
-        <div>
-            <span>03</span>
-            <h3>Security</h3>
-            <p>
-                Network Security · Web Security · Detection · Pentesting
-            </p>
-        </div>
-
-        <div>
-            <span>04</span>
-            <h3>Development</h3>
-            <p>
-                Python · JavaScript · Git · APIs
-            </p>
-        </div>
-
-        <div>
-            <span>05</span>
-            <h3>Security Tools</h3>
-            <p>
-                Nmap · Wireshark · Burp Suite · Metasploit
-            </p>
-        </div>
-
-        <div>
-            <span>06</span>
-            <h3>Exploring</h3>
-            <p>
-                AI Security · LLM Security · AppSec · Research
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section class="contact section" id="contact">
-
-    <div class="contact-inner">
-
-        <div class="section-label">
-            06 / CONTACT
-        </div>
-
-        <h2>
-            Let's build something
-            <span>secure.</span>
-        </h2>
-
-        <p>
-            Interested in cybersecurity, security engineering,
-            research or interesting technical problems?
-        </p>
-
-        <div class="contact-buttons">
-
-            <a
-                href="mailto:your-email@example.com"
-                class="button button-main"
-            >
-                Get in touch ↗
-            </a>
-
-            <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                class="button button-outline"
-            >
-                LinkedIn ↗
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-    <span>
-        © 2026 AARON TALALLA
-    </span>
-
-    <span>
-        SECURITY · SYSTEMS · RESEARCH
-    </span>
-
-    <a
-        href="https://github.com/artalalla"
-        target="_blank"
-    >
-        GITHUB ↗
-    </a>
-
-</footer>
-
-
-<script src="script.js"></script>
-
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 CYBER_OPS // BUILT FOR GITHUB PAGES</p>
+        <p class="sys-meta">LATENCY: 12ms | STATUS: SECURE | ENCRYPTION: AES-256</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
