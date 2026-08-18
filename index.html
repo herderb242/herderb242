@@ -8,27 +8,28 @@
     /* Global Styles & Smooth Scrolling */
     html { 
       scroll-behavior: smooth; 
+      scroll-padding-top: 120px; /* FIX: Prevents the sticky header from overlapping section titles */
     }
     body {
       background-color: #0a0a0a;
       color: #e0e0e0;
-      font-family: 'Courier New', Courier, monospace; /* Fits the cybersecurity theme */
+      font-family: 'Courier New', Courier, monospace;
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
 
     /* =========================================
-       3. EXTREMELY PROMINENT NAVIGATION
+       PROMINENT NAVIGATION (PURPLE THEME)
        ========================================= */
     header {
       position: sticky;
       top: 0;
       background: rgba(10, 10, 10, 0.95);
-      border-bottom: 2px solid #00ffcc;
+      border-bottom: 2px solid #b829ff; /* Purple accent */
       z-index: 1000;
       padding: 1.5rem 0;
-      box-shadow: 0 4px 25px rgba(0, 255, 204, 0.2);
+      box-shadow: 0 4px 25px rgba(184, 41, 255, 0.2);
       backdrop-filter: blur(5px);
     }
     nav {
@@ -40,7 +41,7 @@
     nav a {
       color: #fff;
       text-decoration: none;
-      font-size: 1.3rem; /* Larger, more prominent font */
+      font-size: 1.3rem;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -49,25 +50,25 @@
       transition: all 0.3s ease;
     }
     nav a:hover {
-      color: #00ffcc;
-      border: 1px solid #00ffcc;
+      color: #b829ff;
+      border: 1px solid #b829ff;
       border-radius: 5px;
-      background: rgba(0, 255, 204, 0.1);
+      background: rgba(184, 41, 255, 0.1);
     }
 
     /* =========================================
-       1. GENEROUS SPACING BETWEEN SECTIONS
+       GENEROUS SPACING BETWEEN SECTIONS
        ========================================= */
     section {
       max-width: 1000px;
-      margin: 8rem auto; /* 8rem (128px) space between every section */
+      margin: 8rem auto;
       padding: 2.5rem;
-      border-left: 4px solid #00ffcc;
+      border-left: 4px solid #b829ff; /* Purple border */
       background-color: #111;
       border-radius: 0 8px 8px 0;
     }
     h2 {
-      color: #00ffcc;
+      color: #b829ff;
       font-size: 2.2rem;
       margin-top: 0;
       border-bottom: 1px solid #333;
@@ -76,7 +77,24 @@
     }
 
     /* =========================================
-       2. SECTIONISED CLICKABLE PROJECT BOXES
+       ARSENAL CATEGORIES
+       ========================================= */
+    .arsenal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .arsenal-category h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px dashed #444;
+      padding-bottom: 0.5rem;
+    }
+
+    /* =========================================
+       SECTIONISED CLICKABLE PROJECT BOXES
        ========================================= */
     .project-grid {
       display: grid;
@@ -85,7 +103,6 @@
       margin-top: 2rem;
     }
     
-    /* The clickable box itself */
     .project-box {
       display: flex;
       flex-direction: column;
@@ -94,15 +111,15 @@
       border: 1px solid #333;
       border-radius: 8px;
       padding: 1.8rem;
-      text-decoration: none; /* Removes underline from links */
+      text-decoration: none;
       color: inherit;
       transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
       cursor: pointer;
     }
     .project-box:hover {
       transform: translateY(-8px);
-      border-color: #00ffcc;
-      box-shadow: 0 12px 25px rgba(0, 255, 204, 0.15);
+      border-color: #b829ff;
+      box-shadow: 0 12px 25px rgba(184, 41, 255, 0.15);
     }
     .project-title {
       font-size: 1.3rem;
@@ -116,19 +133,41 @@
       margin-bottom: 2rem;
     }
 
-    /* Tech Stack Styling */
+    /* =========================================
+       TECH STACK BADGES (Reusable)
+       ========================================= */
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 0.6rem;
     }
     .tech-badge {
-      background: #00ffcc;
-      color: #000;
+      background: #b829ff; /* Purple background */
+      color: #000;         /* High contrast text */
       padding: 0.4rem 0.8rem;
       border-radius: 4px;
       font-size: 0.85rem;
       font-weight: bold;
+    }
+
+    /* Experience formatting */
+    .experience-item {
+      margin-bottom: 2rem;
+    }
+    .experience-title {
+      font-size: 1.4rem;
+      color: #fff;
+      font-weight: bold;
+    }
+    .experience-company {
+      color: #b829ff;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .experience-date {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -138,68 +177,114 @@
   <header>
     <nav>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#arsenal">Arsenal</a>
       <a href="#labs">Labs & Projects</a>
-      <a href="#cli">Interactive CLI</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- High-Spacing Sections -->
+  <!-- About Section -->
   <section id="about">
     <h2>About</h2>
-    <p>Cybersecurity student specializing in SOC monitoring, SIEM tool implementation, and log analysis platforms. Passionate about building robust homelabs to simulate enterprise threat detection and response scenarios.</p>
+    <p>Cybersecurity student actively specializing in Security Operations Center (SOC) methodologies, SIEM tool implementation, and log analysis. Passionate about building robust virtual homelabs to simulate enterprise threat detection, anomaly monitoring, and incident response scenarios.</p>
   </section>
 
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    
+    <div class="experience-item">
+      <div class="experience-title">Cybersecurity Student & Lab Engineer</div>
+      <div class="experience-company">Academic & Independent Projects</div>
+      <div class="experience-date">Present</div>
+      <p>Focused on hands-on threat detection, log correlation, and network monitoring. Actively seeking SOC internship opportunities to apply technical concepts to real-world enterprise environments.</p>
+    </div>
+  </section>
+
+  <!-- Arsenal Section (Categorized Tools) -->
   <section id="arsenal">
     <h2>Arsenal</h2>
-    <p>Core toolset includes SIEM platforms, log parsing utilities, network analysis tools, and virtualization environments configured for secure sandbox testing.</p>
+    <p>Core toolset categorized by function, utilized across virtual labs and security configurations.</p>
+    
+    <div class="arsenal-grid">
+      
+      <div class="arsenal-category">
+        <h3>SIEM & Log Monitoring</h3>
+        <div class="tech-stack">
+          <span class="tech-badge">Wazuh</span>
+          <span class="tech-badge">Sysmon</span>
+          <span class="tech-badge">Splunk (Familiar)</span>
+        </div>
+      </div>
+
+      <div class="arsenal-category">
+        <h3>Virtualization & Infrastructure</h3>
+        <div class="tech-stack">
+          <span class="tech-badge">VirtualBox</span>
+          <span class="tech-badge">VMware</span>
+          <span class="tech-badge">Subnetting</span>
+        </div>
+      </div>
+
+      <div class="arsenal-category">
+        <h3>Operating Systems</h3>
+        <div class="tech-stack">
+          <span class="tech-badge">Windows 11</span>
+          <span class="tech-badge">Linux (Ubuntu/Debian)</span>
+          <span class="tech-badge">Kali Linux</span>
+        </div>
+      </div>
+
+      <div class="arsenal-category">
+        <h3>Network & Traffic Analysis</h3>
+        <div class="tech-stack">
+          <span class="tech-badge">Wireshark</span>
+          <span class="tech-badge">TCP/IP</span>
+          <span class="tech-badge">Nmap</span>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-  <!-- Sectionised Clickable Boxes -->
+  <!-- Security Labs & Projects -->
   <section id="labs">
     <h2>Security Labs & Projects</h2>
     
     <div class="project-grid">
-      
       <!-- Clickable Box 1 -->
       <a href="https://github.com/yourlink" target="_blank" class="project-box">
         <div>
-          <div class="project-title">Wazuh SIEM Lab</div>
+          <div class="project-title">Wazuh SIEM Lab Setup</div>
           <div class="project-desc">Configured two virtual machines on the same subnet to monitor logs. Deployed a Wazuh server on one machine and a Wazuh agent on a Windows 11 machine to establish a localized SOC environment.</div>
         </div>
         <div class="tech-stack">
           <span class="tech-badge">Wazuh</span>
           <span class="tech-badge">Windows 11</span>
-          <span class="tech-badge">VMs</span>
-          <span class="tech-badge">Networking</span>
+          <span class="tech-badge">Virtual Machines</span>
         </div>
       </a>
 
       <!-- Clickable Box 2 -->
       <a href="https://github.com/yourlink" target="_blank" class="project-box">
         <div>
-          <div class="project-title">Log Analysis Engine</div>
-          <div class="project-desc">Developed parsing rules to normalize raw event logs from endpoints, identifying anomalies and establishing alerting thresholds for suspicious login attempts.</div>
+          <div class="project-title">Network Traffic Anomaly Detection</div>
+          <div class="project-desc">Captured and analyzed packet data to identify suspicious payloads, simulating malicious network intrusions and mapping alert thresholds for potential incidents.</div>
         </div>
         <div class="tech-stack">
-          <span class="tech-badge">SIEM</span>
-          <span class="tech-badge">Log Analysis</span>
-          <span class="tech-badge">Regex</span>
+          <span class="tech-badge">Wireshark</span>
+          <span class="tech-badge">TCP/IP</span>
+          <span class="tech-badge">PCAP</span>
         </div>
       </a>
-
     </div>
   </section>
 
-  <section id="cli">
-    <h2>Interactive CLI</h2>
-    <p>Mock terminal interface allowing users to run basic enumeration and analysis commands directly in the browser.</p>
-  </section>
-
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>Actively seeking SOC internships and general IT opportunities. Connect with me to discuss security architecture or collaborative lab projects.</p>
+    <p>Actively preparing for and seeking SOC internships and general IT opportunities. Connect with me to discuss log monitoring strategies or collaborative lab projects.</p>
   </section>
 
 </body>
