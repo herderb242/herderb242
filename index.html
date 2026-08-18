@@ -1,238 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cybersecurity Portfolio</title>
   <style>
-    /* Global Styles & Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Global Styles & Smooth Scrolling */
+    html { 
+      scroll-behavior: smooth; 
     }
     body {
-      background-color: #0b0f19;
-      color: #e2e8f0;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Courier New', Courier, monospace; /* Fits the cybersecurity theme */
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
-      padding: 0 1.5rem;
     }
 
-    /* 3. Prominent Navigation Bar */
-    .navbar-container {
+    /* =========================================
+       3. EXTREMELY PROMINENT NAVIGATION
+       ========================================= */
+    header {
       position: sticky;
-      top: 1rem;
+      top: 0;
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom: 2px solid #00ffcc;
       z-index: 1000;
-      margin-bottom: 4rem; /* Section spacing */
+      padding: 1.5rem 0;
+      box-shadow: 0 4px 25px rgba(0, 255, 204, 0.2);
+      backdrop-filter: blur(5px);
     }
-    .navbar {
+    nav {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid #38bdf8;
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
-      border-radius: 50px;
-      padding: 0.85rem 2rem;
-      backdrop-filter: blur(10px);
+      gap: 3rem;
+      flex-wrap: wrap;
     }
-    .navbar a {
-      color: #f8fafc;
+    nav a {
+      color: #fff;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 1.3rem; /* Larger, more prominent font */
+      font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 2px;
       padding: 0.5rem 1rem;
-      border-radius: 20px;
+      border: 1px solid transparent;
       transition: all 0.3s ease;
     }
-    .navbar a:hover, .navbar a.active {
-      background-color: #38bdf8;
-      color: #0b0f19;
-      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    nav a:hover {
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      border-radius: 5px;
+      background: rgba(0, 255, 204, 0.1);
     }
 
-    /* 1. Generous Section Spacing */
+    /* =========================================
+       1. GENEROUS SPACING BETWEEN SECTIONS
+       ========================================= */
     section {
-      max-width: 1100px;
-      margin: 0 auto 5rem auto; /* 5rem spacing between each section */
-      padding: 2rem;
-      background: #111827;
-      border-radius: 12px;
-      border: 1px solid #1f2937;
+      max-width: 1000px;
+      margin: 8rem auto; /* 8rem (128px) space between every section */
+      padding: 2.5rem;
+      border-left: 4px solid #00ffcc;
+      background-color: #111;
+      border-radius: 0 8px 8px 0;
+    }
+    h2 {
+      color: #00ffcc;
+      font-size: 2.2rem;
+      margin-top: 0;
+      border-bottom: 1px solid #333;
+      padding-bottom: 1rem;
+      letter-spacing: 1px;
     }
 
-    .section-title {
-      font-size: 1.8rem;
-      color: #38bdf8;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #1f2937;
-      padding-bottom: 0.5rem;
-    }
-
-    /* 2. Sectionized Security Labs & Projects (Interactive Cards) */
-    .projects-grid {
+    /* =========================================
+       2. SECTIONISED CLICKABLE PROJECT BOXES
+       ========================================= */
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
+      gap: 2.5rem;
+      margin-top: 2rem;
     }
-
-    .project-card {
+    
+    /* The clickable box itself */
+    .project-box {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 10px;
-      padding: 1.5rem;
-      text-decoration: none;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 1.8rem;
+      text-decoration: none; /* Removes underline from links */
       color: inherit;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
       cursor: pointer;
     }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: #38bdf8;
-      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+    .project-box:hover {
+      transform: translateY(-8px);
+      border-color: #00ffcc;
+      box-shadow: 0 12px 25px rgba(0, 255, 204, 0.15);
+    }
+    .project-title {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .project-desc {
+      font-size: 0.95rem;
+      color: #aaa;
+      margin-bottom: 2rem;
     }
 
-    .project-card h3 {
-      color: #f1f5f9;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-card p {
-      color: #94a3b8;
-      font-size: 0.9rem;
-      margin-bottom: 1.25rem;
-    }
-
-    /* Tech Stack Styling inside Cards */
-    .tech-stack-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      color: #64748b;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
-    }
-
-    .tech-stack-container {
+    /* Tech Stack Styling */
+    .tech-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
-
-    .tech-tag {
-      background: #0f172a;
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      font-size: 0.75rem;
-      padding: 0.25rem 0.6rem;
+    .tech-badge {
+      background: #00ffcc;
+      color: #000;
+      padding: 0.4rem 0.8rem;
       border-radius: 4px;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <!-- PROMINENT NAVIGATION HEADER -->
-  <div class="navbar-container">
-    <nav class="navbar">
+  <!-- Prominent Navigation -->
+  <header>
+    <nav>
       <a href="#about">About</a>
       <a href="#arsenal">Arsenal</a>
-      <a href="#labs-projects" class="active">Labs & Projects</a>
+      <a href="#labs">Labs & Projects</a>
       <a href="#cli">Interactive CLI</a>
       <a href="#contact">Contact</a>
     </nav>
-  </div>
+  </header>
 
-  <!-- ABOUT SECTION -->
+  <!-- High-Spacing Sections -->
   <section id="about">
-    <h2 class="section-title">About</h2>
-    <p>Overview of cybersecurity background, SOC monitoring capabilities, and active practical lab setups.</p>
+    <h2>About</h2>
+    <p>Cybersecurity student specializing in SOC monitoring, SIEM tool implementation, and log analysis platforms. Passionate about building robust homelabs to simulate enterprise threat detection and response scenarios.</p>
   </section>
 
-  <!-- ARSENAL SECTION -->
   <section id="arsenal">
-    <h2 class="section-title">Arsenal</h2>
-    <p>Core security tools, platforms, and environments utilized across practical labs.</p>
+    <h2>Arsenal</h2>
+    <p>Core toolset includes SIEM platforms, log parsing utilities, network analysis tools, and virtualization environments configured for secure sandbox testing.</p>
   </section>
 
-  <!-- SECTIONIZED LABS & PROJECTS (CLICKABLE BOXES) -->
-  <section id="labs-projects">
-    <h2 class="section-title">Security Labs & Projects</h2>
+  <!-- Sectionised Clickable Boxes -->
+  <section id="labs">
+    <h2>Security Labs & Projects</h2>
     
-    <div class="projects-grid">
+    <div class="project-grid">
+      
       <!-- Clickable Box 1 -->
-      <a href="https://github.com/yourusername/wazuh-soc-lab" target="_blank" class="project-card">
+      <a href="https://github.com/yourlink" target="_blank" class="project-box">
         <div>
-          <h3>Wazuh SIEM & Log Monitoring Lab</h3>
-          <p>Deployed a dedicated Wazuh manager and Windows 11 agent on a unified subnet to monitor system logs and detect threat activity in real time.</p>
+          <div class="project-title">Wazuh SIEM Lab</div>
+          <div class="project-desc">Configured two virtual machines on the same subnet to monitor logs. Deployed a Wazuh server on one machine and a Wazuh agent on a Windows 11 machine to establish a localized SOC environment.</div>
         </div>
-        <div>
-          <div class="tech-stack-title">Tech Stack</div>
-          <div class="tech-stack-container">
-            <span class="tech-tag">Wazuh</span>
-            <span class="tech-tag">Windows 11</span>
-            <span class="tech-tag">Sysmon</span>
-            <span class="tech-tag">Linux</span>
-            <span class="tech-tag">VirtualBox</span>
-          </div>
+        <div class="tech-stack">
+          <span class="tech-badge">Wazuh</span>
+          <span class="tech-badge">Windows 11</span>
+          <span class="tech-badge">VMs</span>
+          <span class="tech-badge">Networking</span>
         </div>
       </a>
 
       <!-- Clickable Box 2 -->
-      <a href="https://github.com/yourusername/network-traffic-analysis" target="_blank" class="project-card">
+      <a href="https://github.com/yourlink" target="_blank" class="project-box">
         <div>
-          <h3>Network Traffic & Packet Analysis</h3>
-          <p>Analyzed suspicious PCAP files to identify malicious payload downloads, C2 communications, and protocol anomalies.</p>
+          <div class="project-title">Log Analysis Engine</div>
+          <div class="project-desc">Developed parsing rules to normalize raw event logs from endpoints, identifying anomalies and establishing alerting thresholds for suspicious login attempts.</div>
         </div>
-        <div>
-          <div class="tech-stack-title">Tech Stack</div>
-          <div class="tech-stack-container">
-            <span class="tech-tag">Wireshark</span>
-            <span class="tech-tag">NetworkMiner</span>
-            <span class="tech-tag">TCP/IP</span>
-            <span class="tech-tag">PCAP</span>
-          </div>
+        <div class="tech-stack">
+          <span class="tech-badge">SIEM</span>
+          <span class="tech-badge">Log Analysis</span>
+          <span class="tech-badge">Regex</span>
         </div>
       </a>
 
-      <!-- Clickable Box 3 -->
-      <a href="https://github.com/yourusername/phishing-analysis" target="_blank" class="project-card">
-        <div>
-          <h3>Phishing Email Analysis Sandbox</h3>
-          <p>Extracted malicious headers, inspected domain reputational indicators, and safely parsed suspicious attachments in an isolated environment.</p>
-        </div>
-        <div>
-          <div class="tech-stack-title">Tech Stack</div>
-          <div class="tech-stack-container">
-            <span class="tech-tag">ANY.RUN</span>
-            <span class="tech-tag">VirusTotal</span>
-            <span class="tech-tag">EML Parsing</span>
-            <span class="tech-tag">CyberChef</span>
-          </div>
-        </div>
-      </a>
     </div>
   </section>
 
-  <!-- INTERACTIVE CLI SECTION -->
   <section id="cli">
-    <h2 class="section-title">Interactive CLI</h2>
-    <p>Terminal interface for executing simulated security commands and viewing log outputs directly.</p>
+    <h2>Interactive CLI</h2>
+    <p>Mock terminal interface allowing users to run basic enumeration and analysis commands directly in the browser.</p>
   </section>
 
-  <!-- CONTACT SECTION -->
   <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Get in touch for SOC internship roles and collaborative projects.</p>
+    <h2>Contact</h2>
+    <p>Actively seeking SOC internships and general IT opportunities. Connect with me to discuss security architecture or collaborative lab projects.</p>
   </section>
 
 </body>
