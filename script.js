@@ -1,40 +1,67 @@
 ```javascript
-// =========================================================
-// NAVBAR — add shadow when scrolling
-// =========================================================
+/* =====================================================
+   ACTIVE NAVIGATION
+===================================================== */
 
-const navbar = document.querySelector(".navbar");
+const sections = document.querySelectorAll("section[id]");
+const navItems = document.querySelectorAll(".nav-item");
 
-window.addEventListener("scroll", () => {
+function updateNavigation() {
 
-    if (window.scrollY > 30) {
-        navbar.style.borderBottomColor = "rgba(0,0,0,0.15)";
-    } else {
-        navbar.style.borderBottomColor = "rgba(0,0,0,0.08)";
-    }
+    let currentSection = "";
 
-});
+    sections.forEach(section => {
+
+        const sectionTop =
+            section.offsetTop - 250;
+
+        if (window.scrollY >= sectionTop) {
+            currentSection = section.id;
+        }
+
+    });
+
+    navItems.forEach(item => {
+
+        item.classList.remove("active");
+
+        if (
+            item.getAttribute("href") ===
+            `#${currentSection}`
+        ) {
+            item.classList.add("active");
+        }
+
+    });
+
+}
+
+window.addEventListener(
+    "scroll",
+    updateNavigation
+);
 
 
-// =========================================================
-// REVEAL ANIMATION
-// =========================================================
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
 
 const revealElements = document.querySelectorAll(
-    ".section, .project-card, .experience-item, .skill-row"
+    ".project, .skill-category, .timeline-item, .about-content"
 );
 
 const observer = new IntersectionObserver(
-    (entries) => {
+    entries => {
 
-        entries.forEach((entry) => {
+        entries.forEach(entry => {
 
             if (entry.isIntersecting) {
 
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+                entry.target.classList.add("visible");
 
-                observer.unobserve(entry.target);
+                observer.unobserve(
+                    entry.target
+                );
 
             }
 
@@ -47,60 +74,100 @@ const observer = new IntersectionObserver(
 );
 
 
-revealElements.forEach((element) => {
+revealElements.forEach(element => {
 
-    element.style.opacity = "0";
-    element.style.transform = "translateY(25px)";
-    element.style.transition =
-        "opacity 0.7s ease, transform 0.7s ease";
+    element.classList.add("reveal");
 
     observer.observe(element);
 
 });
 
 
-// =========================================================
-// ACTIVE NAVIGATION
-// =========================================================
+/* =====================================================
+   TERMINAL TYPING EFFECT
+===================================================== */
 
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-links a");
+const terminalText =
+    document.querySelector(".terminal-label");
 
-window.addEventListener("scroll", () => {
+if (terminalText) {
 
-    let current = "";
+    const originalText =
+        terminalText.innerHTML;
 
-    sections.forEach((section) => {
+    terminalText.innerHTML = "";
 
-        const sectionTop = section.offsetTop - 150;
+    let index = 0;
 
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
+    function typeTerminal() {
+
+        if (index < originalText.length) {
+
+            terminalText.innerHTML =
+                originalText.substring(
+                    0,
+                    index + 1
+                );
+
+            index++;
+
+            setTimeout(
+                typeTerminal,
+                30
+            );
+
         }
 
-    });
+    }
 
-    navLinks.forEach((link) => {
+    setTimeout(
+        typeTerminal,
+        500
+    );
 
-        link.style.opacity = "";
+}
 
-        if (link.getAttribute("href") === `#${current}`) {
-            link.style.opacity = "0.45";
+
+/* =====================================================
+   PROJECT HOVER
+===================================================== */
+
+const projects =
+    document.querySelectorAll(".project");
+
+projects.forEach(project => {
+
+    project.addEventListener(
+        "mouseenter",
+        () => {
+
+            project.style.setProperty(
+                "--mouse-x",
+                "50%"
+            );
+
         }
-
-    });
+    );
 
 });
 
 
-// =========================================================
-// YEAR
-// =========================================================
+/* =====================================================
+   CONSOLE MESSAGE
+===================================================== */
 
-const year = document.querySelector("footer span");
+console.log(
+`
+%c Aaron Talalla
+%c Cybersecurity Portfolio
 
-if (year) {
-    year.textContent =
-        `© ${new Date().getFullYear()} Aaron Talalla`;
-}
+> System online.
+> Attack surface: expanding.
+> Defensive posture: improving.
+
+github.com/artalalla
+`,
+"color:#9cff57;font-size:20px;font-weight:bold;",
+"color:#777;font-size:12px;"
+);
 ```
