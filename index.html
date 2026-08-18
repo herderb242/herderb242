@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cybersecurity Portfolio</title>
   <style>
-    /* Global Styles & Smooth Scrolling */
-    html { 
-      scroll-behavior: smooth; 
-      scroll-padding-top: 120px; /* FIX: Prevents the sticky header from overlapping section titles */
-    }
+    /* Global Styles */
     body {
       background-color: #0a0a0a;
       color: #e0e0e0;
@@ -26,7 +22,7 @@
       position: sticky;
       top: 0;
       background: rgba(10, 10, 10, 0.95);
-      border-bottom: 2px solid #b829ff; /* Purple accent */
+      border-bottom: 2px solid #b829ff;
       z-index: 1000;
       padding: 1.5rem 0;
       box-shadow: 0 4px 25px rgba(184, 41, 255, 0.2);
@@ -48,6 +44,7 @@
       padding: 0.5rem 1rem;
       border: 1px solid transparent;
       transition: all 0.3s ease;
+      cursor: pointer;
     }
     nav a:hover {
       color: #b829ff;
@@ -61,9 +58,9 @@
        ========================================= */
     section {
       max-width: 1000px;
-      margin: 8rem auto;
+      margin: 8rem auto; /* Large spacing between sections */
       padding: 2.5rem;
-      border-left: 4px solid #b829ff; /* Purple border */
+      border-left: 4px solid #b829ff;
       background-color: #111;
       border-radius: 0 8px 8px 0;
     }
@@ -74,6 +71,44 @@
       border-bottom: 1px solid #333;
       padding-bottom: 1rem;
       letter-spacing: 1px;
+    }
+
+    /* =========================================
+       EXPERIENCE SECTION STYLING
+       ========================================= */
+    .experience-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    .experience-title {
+      font-size: 1.4rem;
+      color: #fff;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    .experience-subtitle {
+      color: #b829ff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .experience-date {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .experience-card ul {
+      margin: 0;
+      padding-left: 1.5rem;
+      color: #aaa;
+    }
+    .experience-card ul li {
+      margin-bottom: 0.5rem;
     }
 
     /* =========================================
@@ -134,7 +169,7 @@
     }
 
     /* =========================================
-       TECH STACK BADGES (Reusable)
+       TECH STACK BADGES
        ========================================= */
     .tech-stack {
       display: flex;
@@ -142,39 +177,19 @@
       gap: 0.6rem;
     }
     .tech-badge {
-      background: #b829ff; /* Purple background */
-      color: #000;         /* High contrast text */
+      background: #b829ff;
+      color: #000;
       padding: 0.4rem 0.8rem;
       border-radius: 4px;
       font-size: 0.85rem;
       font-weight: bold;
     }
-
-    /* Experience formatting */
-    .experience-item {
-      margin-bottom: 2rem;
-    }
-    .experience-title {
-      font-size: 1.4rem;
-      color: #fff;
-      font-weight: bold;
-    }
-    .experience-company {
-      color: #b829ff;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-    .experience-date {
-      color: #777;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Prominent Navigation -->
-  <header>
+  <!-- PROMINENT NAVIGATION -->
+  <header id="main-header">
     <nav>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
@@ -184,37 +199,40 @@
     </nav>
   </header>
 
-  <!-- About Section -->
+  <!-- ABOUT SECTION -->
   <section id="about">
     <h2>About</h2>
     <p>Cybersecurity student actively specializing in Security Operations Center (SOC) methodologies, SIEM tool implementation, and log analysis. Passionate about building robust virtual homelabs to simulate enterprise threat detection, anomaly monitoring, and incident response scenarios.</p>
   </section>
 
-  <!-- Experience Section -->
+  <!-- EXPERIENCE SECTION -->
   <section id="experience">
     <h2>Experience</h2>
+    <p>Professional trajectory, academic focus, and practical IT foundations.</p>
     
-    <div class="experience-item">
+    <div class="experience-card">
       <div class="experience-title">Cybersecurity Student & Lab Engineer</div>
-      <div class="experience-company">Academic & Independent Projects</div>
+      <div class="experience-subtitle">Academic & Independent Projects</div>
       <div class="experience-date">Present</div>
-      <p>Focused on hands-on threat detection, log correlation, and network monitoring. Actively seeking SOC internship opportunities to apply technical concepts to real-world enterprise environments.</p>
+      <ul>
+        <li>Actively preparing for SOC Internship and general IT roles.</li>
+        <li>Architecting virtual environments to practice log correlation and real-time network monitoring.</li>
+        <li>Customizing technical documentation and resumes for target roles in the financial and energy sectors.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Arsenal Section (Categorized Tools) -->
+  <!-- ARSENAL SECTION (Categorized Tools) -->
   <section id="arsenal">
     <h2>Arsenal</h2>
     <p>Core toolset categorized by function, utilized across virtual labs and security configurations.</p>
     
     <div class="arsenal-grid">
-      
       <div class="arsenal-category">
         <h3>SIEM & Log Monitoring</h3>
         <div class="tech-stack">
           <span class="tech-badge">Wazuh</span>
           <span class="tech-badge">Sysmon</span>
-          <span class="tech-badge">Splunk (Familiar)</span>
         </div>
       </div>
 
@@ -222,8 +240,7 @@
         <h3>Virtualization & Infrastructure</h3>
         <div class="tech-stack">
           <span class="tech-badge">VirtualBox</span>
-          <span class="tech-badge">VMware</span>
-          <span class="tech-badge">Subnetting</span>
+          <span class="tech-badge">Networking (Subnetting)</span>
         </div>
       </div>
 
@@ -231,24 +248,21 @@
         <h3>Operating Systems</h3>
         <div class="tech-stack">
           <span class="tech-badge">Windows 11</span>
-          <span class="tech-badge">Linux (Ubuntu/Debian)</span>
-          <span class="tech-badge">Kali Linux</span>
+          <span class="tech-badge">Linux</span>
         </div>
       </div>
 
       <div class="arsenal-category">
-        <h3>Network & Traffic Analysis</h3>
+        <h3>Image & Media Manipulation</h3>
         <div class="tech-stack">
-          <span class="tech-badge">Wireshark</span>
-          <span class="tech-badge">TCP/IP</span>
-          <span class="tech-badge">Nmap</span>
+          <span class="tech-badge">Aspect Ratio Adaptation</span>
+          <span class="tech-badge">Design Extraction</span>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Security Labs & Projects -->
+  <!-- SECURITY LABS & PROJECTS -->
   <section id="labs">
     <h2>Security Labs & Projects</h2>
     
@@ -265,27 +279,42 @@
           <span class="tech-badge">Virtual Machines</span>
         </div>
       </a>
-
-      <!-- Clickable Box 2 -->
-      <a href="https://github.com/yourlink" target="_blank" class="project-box">
-        <div>
-          <div class="project-title">Network Traffic Anomaly Detection</div>
-          <div class="project-desc">Captured and analyzed packet data to identify suspicious payloads, simulating malicious network intrusions and mapping alert thresholds for potential incidents.</div>
-        </div>
-        <div class="tech-stack">
-          <span class="tech-badge">Wireshark</span>
-          <span class="tech-badge">TCP/IP</span>
-          <span class="tech-badge">PCAP</span>
-        </div>
-      </a>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- CONTACT SECTION -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Actively preparing for and seeking SOC internships and general IT opportunities. Connect with me to discuss log monitoring strategies or collaborative lab projects.</p>
   </section>
+
+  <!-- JAVASCRIPT FOR BULLETPROOF SMOOTH SCROLLING -->
+  <script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault(); // Stop default browser jump
+        
+        // Get the target section ID from the href attribute
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+          // Calculate the height of the sticky header to offset the scroll
+          const headerHeight = document.getElementById('main-header').offsetHeight;
+          
+          // Calculate exact position to scroll to
+          const sectionPosition = targetSection.getBoundingClientRect().top;
+          const offsetPosition = sectionPosition + window.scrollY - headerHeight - 20; // 20px extra padding
+          
+          // Execute smooth scroll
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
