@@ -1,332 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYBER_OPS // Security Portfolio & Lab</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybersecurity Portfolio</title>
+  <style>
+    /* Global Styles & Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+
+    /* 3. Prominent Navigation Bar */
+    .navbar-container {
+      position: sticky;
+      top: 1rem;
+      z-index: 1000;
+      margin-bottom: 4rem; /* Section spacing */
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #38bdf8;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+      border-radius: 50px;
+      padding: 0.85rem 2rem;
+      backdrop-filter: blur(10px);
+    }
+    .navbar a {
+      color: #f8fafc;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    .navbar a:hover, .navbar a.active {
+      background-color: #38bdf8;
+      color: #0b0f19;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
+
+    /* 1. Generous Section Spacing */
+    section {
+      max-width: 1100px;
+      margin: 0 auto 5rem auto; /* 5rem spacing between each section */
+      padding: 2rem;
+      background: #111827;
+      border-radius: 12px;
+      border: 1px solid #1f2937;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #38bdf8;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #1f2937;
+      padding-bottom: 0.5rem;
+    }
+
+    /* 2. Sectionized Security Labs & Projects (Interactive Cards) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.15);
+    }
+
+    .project-card h3 {
+      color: #f1f5f9;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Tech Stack Styling inside Cards */
+    .tech-stack-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .tech-stack-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tech-tag {
+      background: #0f172a;
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
-    <div class="scanlines"></div>
 
-    <!-- Header / Navigation -->
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <span class="logo-prefix">&gt;_</span>
-                <span class="logo-text">CYBER<span class="highlight">_OPS</span></span>
-            </a>
-            <div class="sys-status">
-                <span class="status-dot"></span>
-                <span class="status-text">SYSTEM ONLINE // SOC LEVEL 1</span>
-            </div>
-            <nav class="nav-links">
-                <a href="#about"><i class="fa-solid fa-terminal"></i> About</a>
-                <a href="#skills"><i class="fa-solid fa-microchip"></i> Arsenal</a>
-                <a href="#projects"><i class="fa-solid fa-shield-halved"></i> Labs & Projects</a>
-                <a href="#terminal"><i class="fa-solid fa-code"></i> Interactive CLI</a>
-                <a href="#contact" class="btn-nav">Contact</a>
-            </nav>
+  <!-- PROMINENT NAVIGATION HEADER -->
+  <div class="navbar-container">
+    <nav class="navbar">
+      <a href="#about">About</a>
+      <a href="#arsenal">Arsenal</a>
+      <a href="#labs-projects" class="active">Labs & Projects</a>
+      <a href="#cli">Interactive CLI</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2 class="section-title">About</h2>
+    <p>Overview of cybersecurity background, SOC monitoring capabilities, and active practical lab setups.</p>
+  </section>
+
+  <!-- ARSENAL SECTION -->
+  <section id="arsenal">
+    <h2 class="section-title">Arsenal</h2>
+    <p>Core security tools, platforms, and environments utilized across practical labs.</p>
+  </section>
+
+  <!-- SECTIONIZED LABS & PROJECTS (CLICKABLE BOXES) -->
+  <section id="labs-projects">
+    <h2 class="section-title">Security Labs & Projects</h2>
+    
+    <div class="projects-grid">
+      <!-- Clickable Box 1 -->
+      <a href="https://github.com/yourusername/wazuh-soc-lab" target="_blank" class="project-card">
+        <div>
+          <h3>Wazuh SIEM & Log Monitoring Lab</h3>
+          <p>Deployed a dedicated Wazuh manager and Windows 11 agent on a unified subnet to monitor system logs and detect threat activity in real time.</p>
         </div>
-    </header>
+        <div>
+          <div class="tech-stack-title">Tech Stack</div>
+          <div class="tech-stack-container">
+            <span class="tech-tag">Wazuh</span>
+            <span class="tech-tag">Windows 11</span>
+            <span class="tech-tag">Sysmon</span>
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">VirtualBox</span>
+          </div>
+        </div>
+      </a>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="hero">
-            <div class="hero-container">
-                <div class="cyber-badge">
-                    <i class="fa-solid fa-lock"></i> SEC_ID: SOC-ANALYST-2026
-                </div>
-                <h1 class="glitch-title">CYBERSECURITY ANALYST</h1>
-                <div class="typing-container">
-                    <span class="prompt-symbol">&gt;</span>
-                    <span id="typing-text"></span>
-                    <span class="cursor">|</span>
-                </div>
-                <p class="hero-description">
-                    Specializing in Security Operations Center (SOC) monitoring, SIEM threat detection, log telemetry analysis, and incident response automation. 
-                </p>
+      <!-- Clickable Box 2 -->
+      <a href="https://github.com/yourusername/network-traffic-analysis" target="_blank" class="project-card">
+        <div>
+          <h3>Network Traffic & Packet Analysis</h3>
+          <p>Analyzed suspicious PCAP files to identify malicious payload downloads, C2 communications, and protocol anomalies.</p>
+        </div>
+        <div>
+          <div class="tech-stack-title">Tech Stack</div>
+          <div class="tech-stack-container">
+            <span class="tech-tag">Wireshark</span>
+            <span class="tech-tag">NetworkMiner</span>
+            <span class="tech-tag">TCP/IP</span>
+            <span class="tech-tag">PCAP</span>
+          </div>
+        </div>
+      </a>
 
-                <div class="hero-actions">
-                    <a href="#projects" class="cyber-btn primary">
-                        <i class="fa-solid fa-crosshairs"></i> VIEW SECURITY LABS
-                    </a>
-                    <a href="#terminal" class="cyber-btn secondary">
-                        <i class="fa-solid fa-terminal"></i> LAUNCH INTERACTIVE CLI
-                    </a>
-                    <a href="resume.pdf" target="_blank" class="cyber-btn outline">
-                        <i class="fa-solid fa-file-pdf"></i> RESUME.PDF
-                    </a>
-                </div>
+      <!-- Clickable Box 3 -->
+      <a href="https://github.com/yourusername/phishing-analysis" target="_blank" class="project-card">
+        <div>
+          <h3>Phishing Email Analysis Sandbox</h3>
+          <p>Extracted malicious headers, inspected domain reputational indicators, and safely parsed suspicious attachments in an isolated environment.</p>
+        </div>
+        <div>
+          <div class="tech-stack-title">Tech Stack</div>
+          <div class="tech-stack-container">
+            <span class="tech-tag">ANY.RUN</span>
+            <span class="tech-tag">VirusTotal</span>
+            <span class="tech-tag">EML Parsing</span>
+            <span class="tech-tag">CyberChef</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
 
-                <!-- Live SOC Event Stream Simulation -->
-                <div class="live-stream-box">
-                    <div class="stream-header">
-                        <span class="stream-title"><i class="fa-solid fa-wave-square"></i> LIVE TELEMETRY FEED</span>
-                        <span class="stream-badge">MONITORING ACTIVE</span>
-                    </div>
-                    <div class="stream-body" id="log-stream"></div>
-                </div>
-            </div>
-        </section>
+  <!-- INTERACTIVE CLI SECTION -->
+  <section id="cli">
+    <h2 class="section-title">Interactive CLI</h2>
+    <p>Terminal interface for executing simulated security commands and viewing log outputs directly.</p>
+  </section>
 
-        <!-- Personnel Dossier -->
-        <section class="section" id="about">
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span class="title-num">01.</span> PERSONNEL_DOSSIER</h2>
-                <div class="title-line"></div>
-            </div>
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Get in touch for SOC internship roles and collaborative projects.</p>
+  </section>
 
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="btn-red"></span>
-                        <span class="btn-yellow"></span>
-                        <span class="btn-green"></span>
-                    </div>
-                    <div class="terminal-title">dossier_analyst.sh - bash</div>
-                </div>
-                <div class="terminal-body">
-                    <p class="term-line"><span class="term-user">analyst@soc-node:~$</span> cat background.json</p>
-                    <div class="json-code">
-{
-  <span class="json-key">"identity"</span>: <span class="json-string">"Cybersecurity Student & SOC Enthusiast"</span>,
-  <span class="json-key">"primary_focus"</span>: [<span class="json-string">"SOC Telemetry Triage"</span>, <span class="json-string">"SIEM Rules Engineering"</span>, <span class="json-string">"Log Analysis"</span>],
-  <span class="json-key">"current_status"</span>: <span class="json-string">"Seeking SOC Intern / Security Analyst Roles"</span>,
-  <span class="json-key">"active_lab_environment"</span>: <span class="json-string">"Dual-VM Subnet Architecture (Wazuh SIEM + Windows 11 Endpoint)"</span>
-}
-                    </div>
-                    <p class="term-line mt-15"><span class="term-user">analyst@soc-node:~$</span> summary --highlights</p>
-                    <p class="term-text">
-                        Passionate cybersecurity analyst with hands-on experience designing SIEM lab architectures, configuring endpoint agents, analyzing Windows Event Logs/Syslog streams, and investigating security telemetry. Skilled in isolating suspicious activity, mapping adversary behaviors to the MITRE ATT&CK framework, and writing custom detection rules.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Arsenal -->
-        <section class="section" id="skills">
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span class="title-num">02.</span> TECHNICAL_ARSENAL</h2>
-                <div class="title-line"></div>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-solid fa-tower-observation"></i></div>
-                    <h3>SIEM & Log Telemetry</h3>
-                    <p>Hands-on experience deploying and monitoring enterprise security event logs.</p>
-                    <ul class="skill-tags">
-                        <li>Wazuh Manager</li>
-                        <li>Wazuh Agent</li>
-                        <li>Splunk Basics</li>
-                        <li>Elastic / ELK</li>
-                        <li>Syslog</li>
-                        <li>Windows Event ID Triage</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
-                    <h3>Network & Threat Analysis</h3>
-                    <p>Capturing and parsing network traffic to detect anomalies and unauthorized signals.</p>
-                    <ul class="skill-tags">
-                        <li>Wireshark</li>
-                        <li>Nmap</li>
-                        <li>TCP/IP Subnetting</li>
-                        <li>Packet Inspection</li>
-                        <li>Suricata / Snort</li>
-                        <li>Firewall Rules</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Scripting & Automation</h3>
-                    <p>Automating log extraction, parsing IOCs, and scripting security tasks.</p>
-                    <ul class="skill-tags">
-                        <li>Python 3</li>
-                        <li>Bash Scripting</li>
-                        <li>PowerShell</li>
-                        <li>Regex Matching</li>
-                        <li>Git & GitHub</li>
-                        <li>Ubuntu / Kali Linux</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fa-solid fa-chess-knight"></i></div>
-                    <h3>Frameworks & Methodology</h3>
-                    <p>Structured security frameworks for threat intelligence and alert handling.</p>
-                    <ul class="skill-tags">
-                        <li>MITRE ATT&CK</li>
-                        <li>Cyber Kill Chain</li>
-                        <li>NIST SP 800-61</li>
-                        <li>SOC Incident Lifecycle</li>
-                        <li>Root Cause Triage</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Security Labs -->
-        <section class="section" id="projects">
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span class="title-num">03.</span> SECURITY_LABS_&_PROJECTS</h2>
-                <div class="title-line"></div>
-            </div>
-
-            <div class="projects-container">
-                <div class="project-card featured">
-                    <div class="project-header">
-                        <div class="project-badge"><i class="fa-solid fa-star"></i> FEATURED SOC LAB</div>
-                        <span class="project-id">PRJ-01 // WAZUH-LAB</span>
-                    </div>
-                    <h3 class="project-title">Enterprise Wazuh SIEM & Windows Endpoint Telemetry Lab</h3>
-                    <p class="project-description">
-                        Constructed a full-featured security monitoring lab comprising two virtual machines on an isolated subnet. Deployed a <strong>Wazuh SIEM Server</strong> on Ubuntu Linux and a <strong>Wazuh Agent</strong> on a Windows 11 target host to collect, parse, and analyze real-time system telemetry.
-                    </p>
-
-                    <div class="project-highlights">
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-check-circle"></i>
-                            <span>Configured agent-to-server TLS encrypted log forwarding across local subnet.</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-check-circle"></i>
-                            <span>Mapped Windows Event Logs (Event ID 4624 logon, 4625 brute force, 7045 service creation) to custom alert severity rules.</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fa-solid fa-check-circle"></i>
-                            <span>Validated detection coverage against MITRE ATT&CK techniques (T1078 Valid Accounts, T1110 Brute Force).</span>
-                        </div>
-                    </div>
-
-                    <div class="tech-stack">
-                        <span class="tech-tag">Wazuh SIEM</span>
-                        <span class="tech-tag">Windows 11 Target</span>
-                        <span class="tech-tag">Ubuntu Server</span>
-                        <span class="tech-tag">Log Analysis</span>
-                        <span class="tech-tag">Subnetting</span>
-                        <span class="tech-tag">Sysmon</span>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/yourusername/wazuh-lab" target="_blank" class="cyber-btn small">
-                            <i class="fa-brands fa-github"></i> VIEW REPO
-                        </a>
-                        <a href="#terminal" class="cyber-btn small outline" onclick="runCliCommand('wazuh')">
-                            <i class="fa-solid fa-terminal"></i> SIMULATE LOGS IN CLI
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-type">AUTOMATION SCRIPT</span>
-                        <span class="project-id">PRJ-02 // LOG-PARSER</span>
-                    </div>
-                    <h3 class="project-title">Automated Threat Intelligence & Syslog IOC Extractor</h3>
-                    <p class="project-description">
-                        Developed a lightweight Python automation tool that ingests raw authentication logs and access files, utilizes Regex to extract IPv4 addresses/hashes, and queries public Threat Intel APIs to flag malicious IOCs.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Python 3</span>
-                        <span class="tech-tag">Regex</span>
-                        <span class="tech-tag">REST APIs</span>
-                        <span class="tech-tag">Threat Intel</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interactive Terminal CLI Sandbox -->
-        <section class="section" id="terminal">
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span class="title-num">04.</span> INTERACTIVE_CLI_TERMINAL</h2>
-                <div class="title-line"></div>
-            </div>
-
-            <div class="cli-container">
-                <div class="cli-topbar">
-                    <div class="cli-title"><i class="fa-solid fa-terminal"></i> CYBER_OPS COMMAND SHELL v2.4</div>
-                    <div class="cli-hints">Type <span class="cmd-highlight">'help'</span> for command list</div>
-                </div>
-                <div class="cli-output" id="cli-output">
-                    <div class="cli-welcome">
-                        <p>Welcome to CYBER_OPS Interactive Terminal Shell [v2.4.0-release]</p>
-                        <p>Type <span class="cmd-highlight">'help'</span> to view commands or try <span class="cmd-highlight">'skills'</span>, <span class="cmd-highlight">'projects'</span>, <span class="cmd-highlight">'wazuh'</span>, <span class="cmd-highlight">'contact'</span>.</p>
-                        <br>
-                    </div>
-                </div>
-                <div class="cli-input-row">
-                    <span class="cli-prompt">visitor@cyber-ops:~$</span>
-                    <input type="text" id="cli-input" placeholder="Type command..." autofocus autocomplete="off" spellcheck="false">
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Transmit -->
-        <section class="section" id="contact">
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span class="title-num">05.</span> TRANSMIT_SIGNAL</h2>
-                <div class="title-line"></div>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-info">
-                    <h3>GET IN TOUCH</h3>
-                    <p>Actively seeking <strong>SOC Intern</strong> and <strong>Cybersecurity / IT Internship</strong> opportunities. Feel free to reach out for inquiries or collaboration!</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span id="email-text">your.email@example.com</span>
-                            <button class="copy-btn" id="copy-email-btn" onclick="copyEmail()"><i class="fa-solid fa-copy"></i> Copy</button>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa-brands fa-linkedin"></i>
-                            <a href="https://linkedin.com" target="_blank">linkedin.com/in/yourprofile</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fa-brands fa-github"></i>
-                            <a href="https://github.com" target="_blank">github.com/yourusername</a>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="cyber-form" onsubmit="event.preventDefault(); alert('Transmission Sent!');">
-                    <div class="form-group">
-                        <label for="name">&gt; SENDER_NAME</label>
-                        <input type="text" id="name" placeholder="John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">&gt; SENDER_EMAIL</label>
-                        <input type="email" id="email" placeholder="john@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">&gt; TRANSMISSION_PAYLOAD</label>
-                        <textarea id="message" rows="4" placeholder="Your message or internship inquiry..." required></textarea>
-                    </div>
-                    <button type="submit" class="cyber-btn primary full-width">
-                        <i class="fa-solid fa-paper-plane"></i> TRANSMIT MESSAGE
-                    </button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2026 CYBER_OPS // BUILT FOR GITHUB PAGES</p>
-        <p class="sys-meta">LATENCY: 12ms | STATUS: SECURE | ENCRYPTION: AES-256</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
