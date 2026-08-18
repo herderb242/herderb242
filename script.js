@@ -1,173 +1,114 @@
-```javascript
-/* =====================================================
-   ACTIVE NAVIGATION
-===================================================== */
-
-const sections = document.querySelectorAll("section[id]");
-const navItems = document.querySelectorAll(".nav-item");
-
-function updateNavigation() {
-
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-        const sectionTop =
-            section.offsetTop - 250;
-
-        if (window.scrollY >= sectionTop) {
-            currentSection = section.id;
-        }
-
-    });
-
-    navItems.forEach(item => {
-
-        item.classList.remove("active");
-
-        if (
-            item.getAttribute("href") ===
-            `#${currentSection}`
-        ) {
-            item.classList.add("active");
-        }
-
-    });
-
-}
-
-window.addEventListener(
-    "scroll",
-    updateNavigation
-);
-
-
-/* =====================================================
+/* =========================================================
    SCROLL REVEAL
-===================================================== */
+========================================================= */
 
 const revealElements = document.querySelectorAll(
-    ".project, .skill-category, .timeline-item, .about-content"
+    ".project-card, .principle, .timeline-item, .skill-group, .intro-content, .contact-box"
 );
 
-const observer = new IntersectionObserver(
-    entries => {
 
-        entries.forEach(entry => {
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach((entry) => {
 
             if (entry.isIntersecting) {
 
-                entry.target.classList.add("visible");
+                entry.target.classList.add("reveal");
 
-                observer.unobserve(
-                    entry.target
-                );
+                setTimeout(() => {
+                    entry.target.classList.add("visible");
+                }, 80);
 
+                revealObserver.unobserve(entry.target);
             }
 
         });
 
     },
     {
-        threshold: 0.08
+        threshold: 0.12
     }
 );
 
 
-revealElements.forEach(element => {
-
-    element.classList.add("reveal");
-
-    observer.observe(element);
-
+revealElements.forEach((element) => {
+    revealObserver.observe(element);
 });
 
 
-/* =====================================================
-   TERMINAL TYPING EFFECT
-===================================================== */
+/* =========================================================
+   MOUSE PARALLAX FOR HERO
+========================================================= */
 
-const terminalText =
-    document.querySelector(".terminal-label");
+const heroVisual = document.querySelector(".hero-visual");
 
-if (terminalText) {
+if (heroVisual) {
 
-    const originalText =
-        terminalText.innerHTML;
+    document.addEventListener("mousemove", (event) => {
 
-    terminalText.innerHTML = "";
+        const x =
+            (event.clientX / window.innerWidth - 0.5) * 10;
 
-    let index = 0;
+        const y =
+            (event.clientY / window.innerHeight - 0.5) * 10;
 
-    function typeTerminal() {
+        heroVisual.style.transform =
+            `translate(${x}px, ${y}px)`;
 
-        if (index < originalText.length) {
-
-            terminalText.innerHTML =
-                originalText.substring(
-                    0,
-                    index + 1
-                );
-
-            index++;
-
-            setTimeout(
-                typeTerminal,
-                30
-            );
-
-        }
-
-    }
-
-    setTimeout(
-        typeTerminal,
-        500
-    );
+    });
 
 }
 
 
-/* =====================================================
-   PROJECT HOVER
-===================================================== */
+/* =========================================================
+   NAVBAR BACKGROUND
+========================================================= */
 
-const projects =
-    document.querySelectorAll(".project");
+const navbar = document.querySelector(".navbar");
 
-projects.forEach(project => {
 
-    project.addEventListener(
-        "mouseenter",
-        () => {
+window.addEventListener("scroll", () => {
 
-            project.style.setProperty(
-                "--mouse-x",
-                "50%"
-            );
+    if (window.scrollY > 30) {
 
-        }
-    );
+        navbar.style.background =
+            "rgba(7, 8, 12, 0.92)";
+
+    } else {
+
+        navbar.style.background =
+            "rgba(7, 8, 12, 0.78)";
+
+    }
 
 });
 
 
-/* =====================================================
-   CONSOLE MESSAGE
-===================================================== */
+/* =========================================================
+   SMOOTH ANCHOR SCROLL
+========================================================= */
 
-console.log(
-`
-%c Aaron Talalla
-%c Cybersecurity Portfolio
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
-> System online.
-> Attack surface: expanding.
-> Defensive posture: improving.
+    link.addEventListener("click", (event) => {
 
-github.com/artalalla
-`,
-"color:#9cff57;font-size:20px;font-weight:bold;",
-"color:#777;font-size:12px;"
-);
-```
+        const targetId =
+            link.getAttribute("href");
+
+        const target =
+            document.querySelector(targetId);
+
+        if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+    });
+
+});
