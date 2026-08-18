@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aaron Talalla — Cybersecurity</title>
+    <title>Aaron Talalla | Cybersecurity</title>
 
     <meta
         name="description"
-        content="Aaron Talalla — Cybersecurity student interested in offensive security, application security and AI security."
+        content="Aaron Talalla — Cybersecurity student focused on offensive security, application security and AI security."
     >
 
     <link rel="stylesheet" href="style.css">
@@ -18,149 +18,272 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
     >
 </head>
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
 
-<header class="navbar">
-    <div class="nav-container">
+<div class="grid-background"></div>
+<div class="scanlines"></div>
 
-        <a href="#home" class="logo">
-            AT<span>.</span>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+    <a href="#home" class="brand">
+        AT<span>_</span>
+    </a>
+
+    <div class="sidebar-line"></div>
+
+    <nav>
+
+        <a href="#home" class="nav-item active">
+            <span>01</span>
+            HOME
         </a>
 
-        <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <a href="#about" class="nav-item">
+            <span>02</span>
+            ABOUT
+        </a>
+
+        <a href="#projects" class="nav-item">
+            <span>03</span>
+            PROJECTS
+        </a>
+
+        <a href="#experience" class="nav-item">
+            <span>04</span>
+            EXPERIENCE
+        </a>
+
+        <a href="#skills" class="nav-item">
+            <span>05</span>
+            SKILLS
+        </a>
+
+        <a href="#contact" class="nav-item">
+            <span>06</span>
+            CONTACT
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <div class="availability">
+            <span class="status"></span>
+            AVAILABLE
+        </div>
 
         <a
             href="https://github.com/artalalla"
             target="_blank"
-            class="nav-github"
         >
-            GitHub ↗
+            GITHUB ↗
         </a>
 
     </div>
-</header>
+
+</aside>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <main>
 
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section id="home" class="hero">
 
-    <div class="hero-container">
+    <div class="hero-content">
 
-        <div class="hero-label">
-            <span class="status-dot"></span>
+        <div class="terminal-label">
+            <span class="prompt">root@aaron</span>:~$ whoami
+        </div>
+
+        <div class="hero-status">
+            <span></span>
             CYBERSECURITY STUDENT
         </div>
 
         <h1>
-            I build, break<br>
-            <span>and secure.</span>
+            I BUILD.<br>
+            I BREAK.<br>
+            <span>I SECURE.</span>
         </h1>
 
         <p class="hero-description">
-            I'm Aaron Talalla, a cybersecurity student focused on
-            offensive security, application security and the
-            security of AI-powered systems.
+            Cybersecurity student exploring offensive security,
+            application security and the security of
+            AI-powered systems.
         </p>
 
-        <div class="hero-buttons">
-            <a href="#projects" class="button button-primary">
-                View my work
-                <span>↗</span>
+        <div class="hero-actions">
+
+            <a href="#projects" class="btn primary">
+                VIEW PROJECTS
+                <span>→</span>
             </a>
 
-            <a href="#contact" class="button button-secondary">
-                Get in touch
+            <a
+                href="https://github.com/artalalla"
+                target="_blank"
+                class="btn"
+            >
+                GITHUB ↗
             </a>
+
         </div>
 
     </div>
 
+
+    <!-- TERMINAL -->
+
+    <div class="hero-terminal">
+
+        <div class="terminal-header">
+
+            <div class="terminal-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <span>terminal</span>
+
+        </div>
+
+        <div class="terminal-body">
+
+            <p>
+                <span class="green">aaron@security</span>:~$
+                ./profile.sh
+            </p>
+
+            <br>
+
+            <p>
+                NAME:
+                <span class="white">
+                    Aaron Talalla
+                </span>
+            </p>
+
+            <p>
+                FIELD:
+                <span class="white">
+                    Cybersecurity
+                </span>
+            </p>
+
+            <p>
+                FOCUS:
+                <span class="white">
+                    Offensive Security
+                </span>
+            </p>
+
+            <p>
+                CURRENT:
+                <span class="white">
+                    Application Security
+                </span>
+            </p>
+
+            <p>
+                NEXT:
+                <span class="white">
+                    AI Security
+                </span>
+            </p>
+
+            <br>
+
+            <p>
+                <span class="green">aaron@security</span>:~$
+                <span class="cursor"></span>
+            </p>
+
+        </div>
+
+    </div>
+
+
     <div class="hero-scroll">
-        <span>SCROLL TO EXPLORE</span>
-        <div class="scroll-line"></div>
+        SCROLL
+        <span>↓</span>
     </div>
 
 </section>
 
 
-<!-- ================= MARQUEE ================= -->
-
-<section class="marquee-section">
-
-    <div class="marquee">
-
-        <span>CYBERSECURITY</span>
-        <span>•</span>
-        <span>APPLICATION SECURITY</span>
-        <span>•</span>
-        <span>NETWORK SECURITY</span>
-        <span>•</span>
-        <span>AI SECURITY</span>
-        <span>•</span>
-        <span>CYBERSECURITY</span>
-        <span>•</span>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
 <section id="about" class="section">
 
-    <div class="section-number">
-        01 / ABOUT
+    <div class="section-header">
+
+        <span>02</span>
+
+        <div>
+            <p class="eyebrow">
+                // ABOUT
+            </p>
+
+            <h2>
+                Understanding<br>
+                <span>the attack surface.</span>
+            </h2>
+        </div>
+
     </div>
+
 
     <div class="about-grid">
 
-        <div>
-            <p class="section-eyebrow">
-                WHO I AM
-            </p>
-
-            <h2>
-                Curious about how
-                <em>things break.</em>
-            </h2>
+        <div class="about-number">
+            001
         </div>
 
-        <div class="about-text">
+        <div class="about-content">
 
-            <p>
-                I'm a cybersecurity student who enjoys understanding
-                how systems work — and then figuring out how they can
-                be broken, abused and secured.
+            <p class="large-text">
+                I'm Aaron, a cybersecurity student interested in
+                understanding how systems work, how they fail,
+                and how they can be made more resilient.
             </p>
 
             <p>
-                My interests span network security, Linux,
+                My interests currently span networking, Linux,
                 penetration testing, application security and
-                increasingly, the security of AI and machine-learning
-                applications.
+                security operations. I'm gradually moving deeper
+                into the security of AI-powered applications.
             </p>
 
             <p>
-                I believe the best way to learn security is to build
-                systems yourself, attack them, understand the failure,
-                and then engineer the defence.
+                Rather than only studying security theoretically,
+                I prefer building labs, breaking systems,
+                documenting what happens and understanding
+                the underlying vulnerability.
             </p>
 
         </div>
@@ -170,132 +293,68 @@
 </section>
 
 
-<!-- ================= EXPERIENCE ================= -->
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
 
-<section id="experience" class="section section-dark">
+<section id="projects" class="section projects-section">
 
-    <div class="section-number">
-        02 / EXPERIENCE
-    </div>
+    <div class="section-header">
 
-    <div class="experience-header">
-
-        <p class="section-eyebrow">
-            WHERE I'VE WORKED
-        </p>
-
-        <h2>
-            Experience
-        </h2>
-
-    </div>
-
-    <div class="experience-item">
-
-        <div class="experience-date">
-            2026
-        </div>
-
-        <div class="experience-main">
-
-            <h3>
-                SNOC Engineering Intern
-            </h3>
-
-            <p class="company">
-                Netpluz Asia
-            </p>
-
-            <p class="experience-description">
-                Worked in a network operations environment supporting
-                the monitoring, troubleshooting and day-to-day operation
-                of enterprise networks. Gained hands-on exposure to
-                network security, incident troubleshooting and
-                operational workflows across multiple client environments.
-            </p>
-
-            <div class="tags">
-                <span>Network Operations</span>
-                <span>Network Security</span>
-                <span>Monitoring</span>
-                <span>Troubleshooting</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PROJECTS ================= -->
-
-<section id="projects" class="section">
-
-    <div class="section-number">
-        03 / PROJECTS
-    </div>
-
-    <div class="projects-header">
+        <span>03</span>
 
         <div>
-            <p class="section-eyebrow">
-                THINGS I'VE BUILT
+
+            <p class="eyebrow">
+                // SELECTED WORK
             </p>
 
             <h2>
-                Selected work
+                Things I've<br>
+                <span>broken & built.</span>
             </h2>
-        </div>
 
-        <p class="projects-intro">
-            A collection of security labs, experiments and
-            projects documenting what I'm learning.
-        </p>
+        </div>
 
     </div>
 
 
-    <div class="projects-grid">
+    <div class="project-grid">
 
 
         <!-- PROJECT 01 -->
 
-        <article class="project-card">
+        <article class="project">
 
-            <div class="project-top">
-                <span class="project-number">01</span>
-
-                <a
-                    href="https://github.com/artalalla"
-                    target="_blank"
-                    class="project-arrow"
-                >
-                    ↗
-                </a>
+            <div class="project-number">
+                01
             </div>
 
-            <div class="project-content">
+            <div class="project-icon">
+                [ SOC ]
+            </div>
 
-                <p class="project-type">
+            <div class="project-body">
+
+                <p class="project-category">
                     SECURITY OPERATIONS
                 </p>
 
                 <h3>
-                    SOC Lab
+                    SOC LAB
                 </h3>
 
                 <p>
                     A hands-on security operations environment
-                    designed to explore monitoring, detection,
+                    for exploring monitoring, detection,
                     log analysis and incident response.
                 </p>
 
-                <div class="tags">
-                    <span>SOC</span>
+                <div class="tech-stack">
                     <span>SIEM</span>
-                    <span>Detection</span>
-                    <span>Linux</span>
+                    <span>LINUX</span>
+                    <span>LOGGING</span>
+                    <span>DETECTION</span>
                 </div>
 
             </div>
@@ -305,7 +364,7 @@
                 target="_blank"
                 class="project-link"
             >
-                View project →
+                VIEW PROJECT →
             </a>
 
         </article>
@@ -313,41 +372,38 @@
 
         <!-- PROJECT 02 -->
 
-        <article class="project-card">
+        <article class="project">
 
-            <div class="project-top">
-                <span class="project-number">02</span>
-
-                <a
-                    href="https://github.com/artalalla"
-                    target="_blank"
-                    class="project-arrow"
-                >
-                    ↗
-                </a>
+            <div class="project-number">
+                02
             </div>
 
-            <div class="project-content">
+            <div class="project-icon">
+                [ EXP ]
+            </div>
 
-                <p class="project-type">
+            <div class="project-body">
+
+                <p class="project-category">
                     OFFENSIVE SECURITY
                 </p>
 
                 <h3>
-                    vsftpd Exploitation
+                    VSFTPD
+                    EXPLOITATION
                 </h3>
 
                 <p>
-                    A penetration-testing lab exploring
-                    vulnerability discovery, exploitation and
-                    post-exploitation techniques.
+                    A penetration-testing exercise exploring
+                    enumeration, vulnerability discovery,
+                    exploitation and post-exploitation.
                 </p>
 
-                <div class="tags">
-                    <span>Metasploit</span>
-                    <span>Linux</span>
-                    <span>Enumeration</span>
-                    <span>Exploitation</span>
+                <div class="tech-stack">
+                    <span>NMAP</span>
+                    <span>METASPLOIT</span>
+                    <span>LINUX</span>
+                    <span>ENUMERATION</span>
                 </div>
 
             </div>
@@ -357,7 +413,7 @@
                 target="_blank"
                 class="project-link"
             >
-                View project →
+                VIEW PROJECT →
             </a>
 
         </article>
@@ -365,40 +421,37 @@
 
         <!-- PROJECT 03 -->
 
-        <article class="project-card">
+        <article class="project">
 
-            <div class="project-top">
-                <span class="project-number">03</span>
-
-                <a
-                    href="https://github.com/artalalla"
-                    target="_blank"
-                    class="project-arrow"
-                >
-                    ↗
-                </a>
+            <div class="project-number">
+                03
             </div>
 
-            <div class="project-content">
+            <div class="project-icon">
+                [ PHISH ]
+            </div>
 
-                <p class="project-type">
+            <div class="project-body">
+
+                <p class="project-category">
                     SECURITY AWARENESS
                 </p>
 
                 <h3>
-                    Phishing Simulation
+                    PHISHING
+                    SIMULATION
                 </h3>
 
                 <p>
-                    A controlled security-awareness project
-                    demonstrating how phishing attacks work and
-                    how users and organisations can defend against them.
+                    A controlled environment for understanding
+                    phishing techniques, social engineering and
+                    defensive awareness.
                 </p>
 
-                <div class="tags">
-                    <span>Social Engineering</span>
-                    <span>Awareness</span>
-                    <span>Web</span>
+                <div class="tech-stack">
+                    <span>WEB</span>
+                    <span>OSINT</span>
+                    <span>AWARENESS</span>
                 </div>
 
             </div>
@@ -408,7 +461,7 @@
                 target="_blank"
                 class="project-link"
             >
-                View project →
+                VIEW PROJECT →
             </a>
 
         </article>
@@ -416,38 +469,43 @@
 
         <!-- PROJECT 04 -->
 
-        <article class="project-card project-card-outline">
+        <article class="project upcoming">
 
-            <div class="project-top">
-                <span class="project-number">04</span>
-
-                <span class="coming-soon">
-                    IN PROGRESS
-                </span>
+            <div class="project-number">
+                04
             </div>
 
-            <div class="project-content">
+            <div class="project-icon">
+                [ WIP ]
+            </div>
 
-                <p class="project-type">
+            <div class="project-body">
+
+                <p class="project-category">
                     APPLICATION SECURITY
                 </p>
 
                 <h3>
-                    Web Security Lab
+                    WEB SECURITY
+                    LAB
                 </h3>
 
                 <p>
-                    Building vulnerable applications and
-                    systematically testing them against common
-                    application security weaknesses.
+                    Building intentionally vulnerable applications
+                    to explore OWASP vulnerabilities and
+                    application security testing.
                 </p>
 
-                <div class="tags">
+                <div class="tech-stack">
                     <span>OWASP</span>
-                    <span>Burp Suite</span>
-                    <span>Web Security</span>
+                    <span>BURP</span>
+                    <span>WEB</span>
                 </div>
 
+            </div>
+
+            <div class="project-link disabled">
+                CURRENTLY BUILDING
             </div>
 
         </article>
@@ -457,82 +515,305 @@
 </section>
 
 
-<!-- ================= SKILLS ================= -->
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
 
-<section id="skills" class="section section-dark">
+<section id="experience" class="section">
 
-    <div class="section-number">
-        04 / SKILLS
-    </div>
+    <div class="section-header">
 
-    <div class="skills-grid">
+        <span>04</span>
 
         <div>
 
-            <p class="section-eyebrow">
-                WHAT I WORK WITH
+            <p class="eyebrow">
+                // EXPERIENCE
             </p>
 
             <h2>
-                Technical<br>
-                toolkit
+                Where I've<br>
+                <span>learned by doing.</span>
             </h2>
 
         </div>
 
-        <div class="skills-list">
+    </div>
 
-            <div class="skill-row">
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+
+            <div class="timeline-date">
+                2026
+            </div>
+
+            <div class="timeline-line">
+                <span></span>
+            </div>
+
+            <div class="timeline-content">
+
+                <p class="eyebrow">
+                    INTERNSHIP
+                </p>
+
+                <h3>
+                    SNOC ENGINEERING INTERN
+                </h3>
+
+                <h4>
+                    NETPLUZ ASIA
+                </h4>
+
+                <p>
+                    Worked in a network operations environment
+                    supporting the monitoring, troubleshooting
+                    and day-to-day operation of enterprise
+                    network infrastructure.
+                </p>
+
+                <p>
+                    Gained practical exposure to network security,
+                    incident troubleshooting, operational workflows
+                    and supporting multiple client environments.
+                </p>
+
+                <div class="tech-stack">
+                    <span>NETWORKING</span>
+                    <span>MONITORING</span>
+                    <span>TROUBLESHOOTING</span>
+                    <span>SECURITY</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills" class="section skills-section">
+
+    <div class="section-header">
+
+        <span>05</span>
+
+        <div>
+
+            <p class="eyebrow">
+                // TECHNICAL STACK
+            </p>
+
+            <h2>
+                Tools of the<br>
+                <span>trade.</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-category">
+
+            <div class="skill-number">
+                01
+            </div>
+
+            <h3>
+                NETWORKING
+            </h3>
+
+            <ul>
+                <li>TCP/IP</li>
+                <li>DNS</li>
+                <li>HTTP</li>
+                <li>Routing</li>
+                <li>Switching</li>
+                <li>Wireshark</li>
+            </ul>
+
+        </div>
+
+
+        <div class="skill-category">
+
+            <div class="skill-number">
+                02
+            </div>
+
+            <h3>
+                LINUX
+            </h3>
+
+            <ul>
+                <li>Linux Administration</li>
+                <li>Bash</li>
+                <li>Processes</li>
+                <li>Permissions</li>
+                <li>Networking</li>
+                <li>System Security</li>
+            </ul>
+
+        </div>
+
+
+        <div class="skill-category">
+
+            <div class="skill-number">
+                03
+            </div>
+
+            <h3>
+                OFFENSIVE
+            </h3>
+
+            <ul>
+                <li>Nmap</li>
+                <li>Burp Suite</li>
+                <li>Metasploit</li>
+                <li>Enumeration</li>
+                <li>Vulnerability Assessment</li>
+                <li>Penetration Testing</li>
+            </ul>
+
+        </div>
+
+
+        <div class="skill-category">
+
+            <div class="skill-number">
+                04
+            </div>
+
+            <h3>
+                PROGRAMMING
+            </h3>
+
+            <ul>
+                <li>Python</li>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>Bash</li>
+                <li>Git</li>
+            </ul>
+
+        </div>
+
+
+        <div class="skill-category">
+
+            <div class="skill-number">
+                05
+            </div>
+
+            <h3>
+                APPLICATION
+            </h3>
+
+            <ul>
+                <li>OWASP</li>
+                <li>Web Security</li>
+                <li>Authentication</li>
+                <li>Authorization</li>
+                <li>Secure Development</li>
+            </ul>
+
+        </div>
+
+
+        <div class="skill-category">
+
+            <div class="skill-number">
+                06
+            </div>
+
+            <h3>
+                AI SECURITY
+            </h3>
+
+            <ul>
+                <li>LLM Security</li>
+                <li>Prompt Injection</li>
+                <li>AI Application Security</li>
+                <li>Adversarial Attacks</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CURRENT FOCUS
+===================================================== -->
+
+<section class="focus-section">
+
+    <div class="focus-inner">
+
+        <div class="focus-label">
+            CURRENT FOCUS
+        </div>
+
+        <div class="focus-terminal">
+
+            <div>
+                <span class="green">
+                    aaron@security
+                </span>:~$
+                cat roadmap.txt
+            </div>
+
+            <br>
+
+            <div class="roadmap-line">
                 <span>01</span>
-                <h3>Networking</h3>
-                <p>
-                    TCP/IP · DNS · HTTP · Routing · Switching ·
-                    Wireshark · Network Troubleshooting
-                </p>
+                NETWORK SECURITY
+                <b>✓</b>
             </div>
 
-            <div class="skill-row">
+            <div class="roadmap-line">
                 <span>02</span>
-                <h3>Linux</h3>
-                <p>
-                    Linux Administration · Bash · Permissions ·
-                    Processes · Networking · System Security
-                </p>
+                LINUX SECURITY
+                <b>✓</b>
             </div>
 
-            <div class="skill-row">
+            <div class="roadmap-line">
                 <span>03</span>
-                <h3>Offensive Security</h3>
-                <p>
-                    Nmap · Burp Suite · Metasploit · Enumeration ·
-                    Vulnerability Assessment · Penetration Testing
-                </p>
+                OFFENSIVE SECURITY
+                <b>→</b>
             </div>
 
-            <div class="skill-row">
+            <div class="roadmap-line">
                 <span>04</span>
-                <h3>Programming</h3>
-                <p>
-                    Python · Java · JavaScript · Bash · Git
-                </p>
+                APPLICATION SECURITY
+                <b>→</b>
             </div>
 
-            <div class="skill-row">
+            <div class="roadmap-line">
                 <span>05</span>
-                <h3>Application Security</h3>
-                <p>
-                    OWASP · Web Security · Authentication ·
-                    Access Control · Secure Development
-                </p>
+                CLOUD SECURITY
+                <b>○</b>
             </div>
 
-            <div class="skill-row">
+            <div class="roadmap-line">
                 <span>06</span>
-                <h3>AI Security</h3>
-                <p>
-                    Currently exploring LLM security, AI application
-                    security, prompt injection and adversarial threats.
-                </p>
+                AI / ML SECURITY
+                <b>○</b>
             </div>
 
         </div>
@@ -542,102 +823,54 @@
 </section>
 
 
-<!-- ================= CURRENTLY LEARNING ================= -->
-
-<section class="section learning-section">
-
-    <div class="section-number">
-        05 / CURRENTLY LEARNING
-    </div>
-
-    <div class="learning-content">
-
-        <p class="section-eyebrow">
-            2026 — 2028
-        </p>
-
-        <h2>
-            Building towards<br>
-            <em>AI security.</em>
-        </h2>
-
-        <p>
-            My long-term goal is to work at the intersection of
-            cybersecurity and artificial intelligence — particularly
-            application security, offensive security and securing
-            AI-powered systems.
-        </p>
-
-        <div class="learning-grid">
-
-            <div>
-                <span>01</span>
-                <strong>Application Security</strong>
-            </div>
-
-            <div>
-                <span>02</span>
-                <strong>Cloud Security</strong>
-            </div>
-
-            <div>
-                <span>03</span>
-                <strong>AI / ML Security</strong>
-            </div>
-
-            <div>
-                <span>04</span>
-                <strong>Offensive Security</strong>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
+<!-- =====================================================
+     CONTACT
+===================================================== -->
 
 <section id="contact" class="contact-section">
 
-    <div class="contact-container">
+    <div class="contact-label">
+        06 // CONTACT
+    </div>
 
-        <p class="section-eyebrow">
-            06 / CONTACT
+    <div class="contact-content">
+
+        <p class="eyebrow">
+            HAVE SOMETHING INTERESTING?
         </p>
 
         <h2>
-            Let's build something<br>
-            <em>secure.</em>
+            LET'S SECURE<br>
+            <span>SOMETHING.</span>
         </h2>
 
-        <p>
-            Interested in cybersecurity, security research,
-            collaboration or just talking shop?
+        <p class="contact-description">
+            Whether it's security research, a project,
+            collaboration or just talking about cybersecurity —
+            feel free to reach out.
         </p>
 
         <a
             href="mailto:your-email@example.com"
-            class="contact-email"
+            class="email"
         >
             your-email@example.com ↗
         </a>
 
-        <div class="social-links">
+        <div class="socials">
 
             <a
                 href="https://github.com/artalalla"
                 target="_blank"
             >
-                GitHub
+                GITHUB ↗
             </a>
 
             <a
-                href="https://www.linkedin.com/"
+                href="https://linkedin.com/"
                 target="_blank"
             >
-                LinkedIn
+                LINKEDIN ↗
             </a>
 
         </div>
@@ -646,26 +879,30 @@
 
 </section>
 
-</main>
 
-
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-    <span>
-        © 2026 Aaron Talalla
-    </span>
+    <div>
+        <span class="green">●</span>
+        SYSTEM ONLINE
+    </div>
 
-    <span>
-        Built with HTML, CSS & curiosity.
-    </span>
+    <div>
+        © 2026 AARON TALALLA
+    </div>
 
-    <a href="#home">
-        Back to top ↑
-    </a>
+    <div>
+        MALAYSIA
+    </div>
 
 </footer>
+
+
+</main>
 
 
 <script src="script.js"></script>
