@@ -1,26 +1,73 @@
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+/* =========================================
+   HERO NETWORK INTERACTION
+========================================= */
 
-const revealElements = document.querySelectorAll(
-    ".project-card, .principle, .timeline-item, .skill-group, .intro-content, .contact-box"
+const network = document.querySelector(".network");
+
+if (network) {
+
+    document.addEventListener("mousemove", (event) => {
+
+        const x =
+            (event.clientX / window.innerWidth - 0.5) * 12;
+
+        const y =
+            (event.clientY / window.innerHeight - 0.5) * 12;
+
+        network.style.transform =
+            `translate(${x}px, ${y}px)`;
+
+    });
+
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 40) {
+
+        navbar.style.background =
+            "rgba(7,8,13,.94)";
+
+    } else {
+
+        navbar.style.background =
+            "rgba(7,8,13,.72)";
+
+    }
+
+});
+
+
+/* =========================================
+   REVEAL ANIMATIONS
+========================================= */
+
+const elements = document.querySelectorAll(
+    ".project, .approach-item, .experience-item, .skills-grid > div"
 );
 
 
-const revealObserver = new IntersectionObserver(
+const observer = new IntersectionObserver(
     (entries) => {
 
         entries.forEach((entry) => {
 
             if (entry.isIntersecting) {
 
-                entry.target.classList.add("reveal");
+                entry.target.style.opacity = "1";
 
-                setTimeout(() => {
-                    entry.target.classList.add("visible");
-                }, 80);
+                entry.target.style.transform =
+                    "translateY(0)";
 
-                revealObserver.unobserve(entry.target);
+                observer.unobserve(entry.target);
+
             }
 
         });
@@ -32,83 +79,17 @@ const revealObserver = new IntersectionObserver(
 );
 
 
-revealElements.forEach((element) => {
-    revealObserver.observe(element);
-});
+elements.forEach((element, index) => {
 
+    element.style.opacity = "0";
 
-/* =========================================================
-   MOUSE PARALLAX FOR HERO
-========================================================= */
+    element.style.transform =
+        "translateY(25px)";
 
-const heroVisual = document.querySelector(".hero-visual");
+    element.style.transition =
+        `opacity .7s ease ${index * .05}s,
+         transform .7s ease ${index * .05}s`;
 
-if (heroVisual) {
-
-    document.addEventListener("mousemove", (event) => {
-
-        const x =
-            (event.clientX / window.innerWidth - 0.5) * 10;
-
-        const y =
-            (event.clientY / window.innerHeight - 0.5) * 10;
-
-        heroVisual.style.transform =
-            `translate(${x}px, ${y}px)`;
-
-    });
-
-}
-
-
-/* =========================================================
-   NAVBAR BACKGROUND
-========================================================= */
-
-const navbar = document.querySelector(".navbar");
-
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 30) {
-
-        navbar.style.background =
-            "rgba(7, 8, 12, 0.92)";
-
-    } else {
-
-        navbar.style.background =
-            "rgba(7, 8, 12, 0.78)";
-
-    }
-
-});
-
-
-/* =========================================================
-   SMOOTH ANCHOR SCROLL
-========================================================= */
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-
-    link.addEventListener("click", (event) => {
-
-        const targetId =
-            link.getAttribute("href");
-
-        const target =
-            document.querySelector(targetId);
-
-        if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    });
+    observer.observe(element);
 
 });
