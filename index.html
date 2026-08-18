@@ -58,7 +58,7 @@
        ========================================= */
     section {
       max-width: 1000px;
-      margin: 8rem auto; /* Large spacing between sections */
+      margin: 8rem auto;
       padding: 2.5rem;
       border-left: 4px solid #b829ff;
       background-color: #111;
@@ -202,7 +202,7 @@
   <!-- ABOUT SECTION -->
   <section id="about">
     <h2>About</h2>
-    <p>Hi! I'm Aaron, a high-performing cybersecurity student with a 3.90 CGPA and 2x Dean’s List recognition. Strong foundation in network security, penetration testing, vulnerability assessment, and threat analysis, with hands-on experience applying security concepts in practical environments.</p>
+    <p>Cybersecurity student actively specializing in Security Operations Center (SOC) methodologies, SIEM tool implementation, and log analysis. Passionate about building robust virtual homelabs to simulate enterprise threat detection, anomaly monitoring, and incident response scenarios.</p>
   </section>
 
   <!-- EXPERIENCE SECTION -->
@@ -211,9 +211,9 @@
     <p>Professional trajectory, academic focus, and practical IT foundations.</p>
     
     <div class="experience-card">
-      <div class="experience-title">SNOC Engineering Intern</div>
-      <div class="experience-subtitle">Netpluz Asia</div>
-      <div class="experience-date">May - August 2026</div>
+      <div class="experience-title">Cybersecurity Student & Lab Engineer</div>
+      <div class="experience-subtitle">Academic & Independent Projects</div>
+      <div class="experience-date">Present</div>
       <ul>
         <li>Actively preparing for SOC Internship and general IT roles.</li>
         <li>Architecting virtual environments to practice log correlation and real-time network monitoring.</li>
@@ -222,7 +222,7 @@
     </div>
   </section>
 
-  <!-- ARSENAL SECTION (Categorized Tools) -->
+  <!-- ARSENAL SECTION -->
   <section id="arsenal">
     <h2>Arsenal</h2>
     <p>Core toolset categorized by function, utilized across virtual labs and security configurations.</p>
@@ -247,16 +247,16 @@
       <div class="arsenal-category">
         <h3>Operating Systems</h3>
         <div class="tech-stack">
-          <span class="tech-badge">Windows</span>
+          <span class="tech-badge">Windows 11</span>
           <span class="tech-badge">Linux</span>
         </div>
       </div>
 
       <div class="arsenal-category">
-        <h3>Networking</h3>
+        <h3>Image & Media Manipulation</h3>
         <div class="tech-stack">
-          <span class="tech-badge">Wireshark</span>
-          <span class="tech-badge">Nmap</span>
+          <span class="tech-badge">Aspect Ratio Adaptation</span>
+          <span class="tech-badge">Design Extraction</span>
         </div>
       </div>
     </div>
@@ -267,7 +267,7 @@
     <h2>Security Labs & Projects</h2>
     
     <div class="project-grid">
-      <!-- Clickable Box 1 -->
+      <!-- ACTUAL PROJECT: Wazuh Lab -->
       <a href="https://github.com/yourlink" target="_blank" class="project-box">
         <div>
           <div class="project-title">Wazuh SIEM Lab Setup</div>
@@ -279,6 +279,32 @@
           <span class="tech-badge">Virtual Machines</span>
         </div>
       </a>
+
+      <!-- PLACEHOLDER 1 -->
+      <a href="https://github.com/yourlink" target="_blank" class="project-box">
+        <div>
+          <div class="project-title">[Placeholder] Network Traffic Analysis</div>
+          <div class="project-desc">Analyzed PCAP files to identify malicious payload downloads, C2 communications, and protocol anomalies in simulated attack scenarios.</div>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-badge">Wireshark</span>
+          <span class="tech-badge">TCP/IP</span>
+          <span class="tech-badge">PCAP</span>
+        </div>
+      </a>
+
+      <!-- PLACEHOLDER 2 -->
+      <a href="https://github.com/yourlink" target="_blank" class="project-box">
+        <div>
+          <div class="project-title">[Placeholder] Phishing Incident Response</div>
+          <div class="project-desc">Extracted malicious headers, inspected domain reputational indicators, and safely parsed suspicious attachments in an isolated sandbox.</div>
+        </div>
+        <div class="tech-stack">
+          <span class="tech-badge">ANY.RUN</span>
+          <span class="tech-badge">EML Parsing</span>
+          <span class="tech-badge">CyberChef</span>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -288,25 +314,19 @@
     <p>Actively preparing for and seeking SOC internships and general IT opportunities. Connect with me to discuss log monitoring strategies or collaborative lab projects.</p>
   </section>
 
-  <!-- JAVASCRIPT FOR BULLETPROOF SMOOTH SCROLLING -->
+  <!-- JAVASCRIPT FOR SMOOTH SCROLLING -->
   <script>
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        e.preventDefault(); // Stop default browser jump
-        
-        // Get the target section ID from the href attribute
+        e.preventDefault(); 
         const targetId = this.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
         
         if (targetSection) {
-          // Calculate the height of the sticky header to offset the scroll
           const headerHeight = document.getElementById('main-header').offsetHeight;
-          
-          // Calculate exact position to scroll to
           const sectionPosition = targetSection.getBoundingClientRect().top;
-          const offsetPosition = sectionPosition + window.scrollY - headerHeight - 20; // 20px extra padding
+          const offsetPosition = sectionPosition + window.scrollY - headerHeight - 20;
           
-          // Execute smooth scroll
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
